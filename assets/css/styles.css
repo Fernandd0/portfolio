@@ -1,0 +1,184 @@
+/*Variables*/
+:root{
+  --font-family-1: Press Start 2P;
+  --font-family-2: IBM Plex Mono;
+  --font-family-3: Rubik, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  --mini-font: 0.8em;
+  --normal-font: 1em;
+  --bold-font: 1.5em;
+  --bolder-font: 2em;
+  --primary-color: #EADFCD; /*antes:#EADFCD;*/
+  --secondary-color: #11223c;
+  --third-color: #E5E0DD;
+  --fourth-color: #FF6541;
+  --primary-shadow: rgba(0, 0, 0, 0.2);
+  --secondary-shadow: #fafafa;
+  --transition: 0.4s;
+  --line-height: 1.7em;
+}
+
+/*General*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--secondary-color);
+}
+
+html
+body{
+  background-color:var(--primary-color);
+  height: 100%;
+  padding: 2em 4em;
+}
+
+/*Gneral ends*/
+
+/*Navbar*/
+.header{
+  font-family: var(--font-family-1);
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 3em;
+  background-color:var(--primary-color);
+  margin: -1em -3em;
+}
+
+
+.c-logo {
+  display: flex;
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: var(--mini-font);
+  text-transform: uppercase;
+  border-right: 0.2em solid var(--secondary-color);
+  width: max-content;
+  height: auto;
+  text-align:center;
+  padding:0px;
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  max-width: 100;
+  justify-content: space-between;
+  border: 0.2em solid var(--secondary-color);
+  box-shadow: 0.3em 0.3em var(--primary-shadow);
+}
+
+.nav-list{
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  margin-top: 0;
+  justify-content: right;
+}
+
+.nav-link{
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: var(--mini-font);
+  text-transform: uppercase;
+  padding: 0.8em 1em ;
+  border-left: 0.2em solid var(--secondary-color);
+  width: max-content;
+}
+
+.nav-link:hover{
+  color: var(--fourth-color);
+  background-color: var(--secondary-color);
+  transition: 0.5s;
+}
+
+
+.nav-toggle{
+  color: var(--secondary-color);
+  background: none;
+  border: none;
+  font-size: 4 4;
+  padding: 0 20px;
+  display: none;
+  line-height: 60px;
+  cursor: pointer;
+}
+/*Navbar end*/
+
+/*Color mood*/
+.ico-mood{
+  width: 2em;
+  height: 2em;
+  display: flex;
+}
+/*Color mood end*/
+
+/*Portada*/
+.portada-titulo{
+  margin-top: 2em;
+  font-family: var(--font-family-2);
+  font-size: var(--bold-font);
+}
+.portada-main {
+  font-family: var(--font-family-1);
+  font-size: var(--bolder-font);
+}
+.portada-text {
+  font-family: var(--font-family-2);
+  font-size: var(--bold-font);
+}
+/*Portada end*/
+
+/*Hero Section*/
+.hero {
+  display: flex;
+  gap: 3em;
+  margin: 2em 0em;
+  padding: 1em;
+  border: 0.40em solid var(--secondary-color);
+  box-shadow: 0.3rem 0.3rem var(--primary-shadow);
+  align-items: center;
+}
+
+.bio-img {
+  height: 15em;
+  width: 15em;
+  image-rendering: pixelated;
+}
+
+.bio-title {
+  display: table;
+  padding: 0em 1em;
+  margin: -1.4em 0 2em;
+  font-size: var(--bold-font);
+  background-color: var(--primary-color);
+}
+.bio-text {
+  margin: -1em 0 2em;
+  font-family: var(--font-family-2);
+  font-size: var(--bold-font);
+}
+/*AboutMe End*/
+
+/*More About Me*/
+
+/*More About Me End*/
+
+/*Skills section*/
+
+/*Skills end*/
+
+/*Social Media*/
+.icon-list {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 1%;
+  bottom: 50%;
+}
+
+.nes-icon {
+  width: 2em;
+  height: 2em;
+}
+/*SocialMedia End*/
