@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fernando Solorzano</title>
 
-    <!--Font Family general-->
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-
     <!--CSS Styles -->
     <link rel="stylesheet" href="assets/css/styles.css" />
 
@@ -16,13 +13,13 @@
     <link
     rel="touch-icon"
     sizes="180x180"
-    href="assets/img/me.jpg"
+    href="assets/img/me-1.png"
     />
     <link
     rel="icon"
     type="image/png"
     sizes="32x32"
-    href="assets/img/me.jpg"
+    href="assets/img/me-1.png"
     />
 
     <!-- Framework NES.css -->
@@ -30,7 +27,6 @@
     <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
     <!-- latest -->
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
-
   </head>
   <body>
     <!--Navbar-->
@@ -40,11 +36,11 @@
           <li><a href="#" class="logo">><efe/>efe/></a></li>
         </ul>
         <ul class="nav-list">
-          <li><a href="#about" class="nav-link nav-link-1">About Me</Sobre></a></li>
-          <li><a href="#skills" class="nav-link nav-link-2">Skills</a></li>
-          <li><a href="#projects" class="nav-link nav-link-3">Projects</a></li>
-          <li><a href="#contact" class="nav-link nav-link-4">Contact Me</a></li>
-          <li><a href="#cv" class="nav-link nav-link-5">Resume</a></li>
+          <li><a href="#about" class="nav-link">About Me</Sobre></a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact Me</a></li>
+          <li><a href="#cv" class="nav-link">Resume</a></li>
         </ul>
         <button class="nav-toggle"> <img  class="img-nav" src="assets/ico/ico-bar.png"></button>
       </nav>
@@ -66,75 +62,115 @@
 
     <!--Portada-->
     <main class="portada">
-      <h2 class="portada-titulo">Hi, I'm Fernando 👋</h2>
-      <h3 class="portada-main"><b>Student. Junior developer. Full stack.</b></h3>
-      <p class="portada-text">Developer in progress, I love and create front-end, <br> the backend is all for me <br> and storing it Manage databases is my spend time.</p>
+      <div class="div-portada-all">
+        <div class="div-portada-text">
+          <h2 class="portada-titulo">Hi, I'm Fernando Solorzano 😎</h2>
+          <h3 class="portada-main">Student. Junior developer. Full stack.</h3>
+          <p class="portada-text"><b>I love and create front-end, the *backend* is all for me <br> and storing it Manage databases is my spend time.</b></p>
+        </div>
+        <img src="assets/img/me.png" class="img-portada" alt="me">
+      </div>
       <button type="button" class="nes-btn btn-portada">Say Hello</button>
       <button type="button" class="nes-btn btn-portada">Resume</button>
-      <img src="assets/img/portada.png" class="img-portada" alt="portada">
     </main>
 
     <!--Hero Section-->
     <section class="hero" id="about">
       <img
-        src="assets/img/project4.jpg"
+        src="assets/img/me-5.jpg"
         alt="me"
         class="bio-img"
       />
       <div class="bio">
-        <h2 class="bio-title"># Sobre mi</h2>
-        <p class="bio-text">Mi nombre es Fernando Solorzano y soy un estudiante de la vida que nunca para de aprender.</p>
-        <p class="bio-text">Soy desarrollador full stack junior de Perú</p>
+        <div class="bio-title-c">
+          <h2 class="bio-title">About Me</h2>
+        </div>
+        <p class="bio-text">Hello there, I'm 18 years old. I'm a <b>junior full stack developer</b> from Peru. I'm a passionate developer who helps people <b>live life and not let life live them.</b></p>
+        <p class="bio-text"><b>If you can imagine it you can do it,</b> possibly a phrase that has marked and driven me in this world.</p>
+        <div class="btn-hero-c">
+          <button type="button" class="nes-btn">More About Me</button>
+        </div>
       </div>
     </section>
 
-    <!-- More About Me-->
-    <section class="more-about">
+    <!-- More About Me
+    <section class="more-about-me">
       <h2>More About Me</h2>
+      <p>I love deport, especially basketball and soccer. Did you know that between basketball and soccer? although they are very different sports, the tactic is fundamental in basketball as well as the documentation and analysis to develop. This is how we can realize how things are related to the programming...</p>
       <p>LOL</p>
-      <p>LOL</p>
-      <p>LOL</p>
-    </section>
+    </section>-->
 
     <!-- Skills section -->
     <section class="skills" id="skills">
-      <h2 class="skill-header">My Top Skills</h2>
+      <div class="skill-title-c">
+        <h2 class="skill-title">My Top Skills</h2>
+      </div>
 
       <div class="skills-wrapper">
-        <div class="">
+        <div class="cards-row">
           <img
-            src="assets/ico/icon_java.svg"
+            src="assets/ico/ico-java.png"
             alt=""
             loading="lazy"
             class="icon-card"
           />
           <img
-            src="assets/ico/icon-bootstrap.svg"
+            src="assets/ico/ico-python.png"
             alt=""
             loading="lazy"
             class="icon-card"
           />
           <img
-            src="assets/ico/icon-git.svg"
+            src="assets/ico/ico-javascript.png"
+            alt=""
+            loading="lazy"
+            class="icon-card"
+          />
+          <img
+            src="assets/ico/ico-html.png"
+            alt=""
+            loading="lazy"
+            class="icon-card"
+          />
+          <img
+            src="assets/ico/ico-css.png"
+            alt=""
+            loading="lazy"
+            class="icon-card"
+          />
+          <img
+            src="assets/ico/ico-sql.png"
             alt=""
             loading="lazy"
             class="icon-card"
           />
         </div>
-        <div class="">
+        <div class="cards-row">
           <img
-            src="assets/ico/icon-html.svg"
+            src="assets/ico/ico-linux.png"
             alt=""
             class="icon-card"
           />
           <img
-            src="assets/ico/icon-css.svg"
+            src="assets/ico/ico-git.png"
             alt=""
             loading="lazy"
             class="icon-card"
           />
           <img
-            src="assets/ico/icon-javascript.svg"
+            src="assets/ico/ico-github.png"
+            alt=""
+            loading="lazy"
+            class="icon-card"
+          />
+          <img
+            src="assets/ico/ico-bootstrap.png"
+            alt=""
+            loading="lazy"
+            class="icon-card"
+          />
+          <img
+            src="assets/ico/ico-bash.png"
             alt=""
             loading="lazy"
             class="icon-card"
@@ -149,12 +185,12 @@
       <div class="projects-container">
         <div class="project-container project-card">
           <img
-            src="assets/img/project2.jpg"
+            src="assets/img/project6.jpg"
             alt="expense-tracker"
             loading="lazy"
             class="project-pic"
           />
-          <h3 class="project-title">Expense Tracker</h3>
+          <h3 class="project-title">First Project</h3>
           <p class="project-details">
             zzz
           </p>
@@ -162,12 +198,12 @@
         </div>
         <div class="project-container project-card">
           <img
-            src="assets/img/project5.jpg"
+            src="assets/img/project4.jpg"
             alt="netflic-clone"
             loading="lazy"
             class="project-pic"
           />
-          <h3 class="project-title">Netflix Clone</h3>
+          <h3 class="project-title">Second Project</h3>
           <p class="project-details">
             zzz
           </p>
@@ -180,7 +216,7 @@
             loading="lazy"
             class="project-pic"
           />
-          <h3 class="project-title">zzz</h3>
+          <h3 class="project-title">Third Project</h3>
           <p class="project-details">
             zzz
           </p>
@@ -251,23 +287,19 @@
         <i class="nes-icon twitter"></i>
       </a>
       <!-- gmail -->
-      <a href="mr.fernadd.to@gmail.com" target="_blank">
+      <a href="mailto:fernandd.to.dev@gmail.com" target="_blank">
         <i class="nes-icon gmail"></i>
       </a>
       <!-- linkedin -->
-      <a href="#about" target="_blank">
+      <a href="#" target="_blank">
         <i class="nes-icon linkedin"></i>
       </a>
     </div>
 
     <!-- Scroll to top -->
-    <i class="scroll-up" id="scroll-up">
-      <img
-        src="assets/ico/ico-scroll.png"
-        class="socicon up-arrow"
-        alt="boton-scroll"
-      />
-    </i>
+    <div class="scroll-c">
+      <button type="button" class="nes-btn is-error">↑</button>
+    </div>
 
     <!-- Footer section -->
     <footer>
