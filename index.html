@@ -36,34 +36,33 @@
   <body>
     <!--Navbar-->
     <header class="header">
-      <nav class="nav">
-        <ul class="c-logo">
-          <li><a href="#" class="logo">><efe/>efe/></a></li>
-        </ul>
+      <nav id="nav" class="nav">
+        <div class="c-logo">
+          <li><a href="#" class="logo">><efe/>efe</a></li>
+        </div>
         <ul class="nav-list">
-          <li><a href="#about" class="nav-link">About Me</Sobre></a></li>
+          <li><a href="#about" class="nav-link">About Me</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#contact" class="nav-link">Contact Me</a></li>
-          <li><a href="#cv" class="nav-link">Resume</a></li>
+          <li><a href="#cv" class="nav-link nav-link-5">Resume</a></li>
+          <!--Color Mood-->
+          <button type="button" id="toggle-theme" class="toggle-theme">
+            <img
+              src="assets/ico/ico-moon.png"
+              alt="dark mood"
+              class="ico-mood"
+            />
+            <img
+              src="assets/ico/ico-sun.png"
+              alt="dark mood"
+              class="ico-mood"
+            />
+          </button>
         </ul>
-        <button class="nav-toggle"> <img  class="img-nav" src="assets/ico/ico-bar.png"></button>
+        <button class="nav-toggle"> <img  class="img-nav-toggle" src="assets/ico/ico-bar.png"></button>
       </nav>
     </header>
-
-    <!--Color Mood-->
-    <div>
-      <img
-        src="assets/ico/ico-moon.png"
-        alt="dark mood"
-        class="ico-mood"
-      />
-      <img
-        src="assets/ico/ico-sun.png"
-        alt="dark mood"
-        class="ico-mood"
-      />
-    </div>
 
     <!--Portada-->
     <main class="portada">
@@ -217,6 +216,7 @@
     </section>
 
     <!-- Contact section -->
+    <!--
     <section class="contact" id="contact">
       <h2>Contact Me</h2>
       <div class="contact-form-container">
@@ -266,7 +266,7 @@
         </div>
       </div>
     </section>
-
+  -->
     <!--Social Networks-->
     <div class="icon-list">
       <!-- github -->
