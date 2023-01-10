@@ -8,7 +8,7 @@
   --bold-font: 1.5em;
   --bolder-font: 2em;
   --primary-color: #EADFCD;
-  --secondary-color: #11223c;
+  --secondary-color: #090E16;
   --third-color: #E5E0DD;
   --fourth-color: #FF6541;
   --color-dark: #090E16;
@@ -131,12 +131,13 @@ body{
   cursor: pointer;
   filter: var(--color-img-2);
 }
-#toggle{
+#toggle, #toggle-2{
   display: none;
 }
 .dark-mood{
-  background-color: var(--color-dark);
-  color: var(--color-dark-3);
+  --primary-color: #090E16;
+  --secondary-color: #EADFCD ;
+  --third-color:#33245F;
 }
 
 .nav-toggle{
@@ -340,11 +341,8 @@ main{
 /*Scroll*/
 .scroll-c{
   display: flex;
-  position: fixed;
-  right: 2%;
-  bottom: 5%;
   cursor: pointer;
-  font-size: 0.5em;
+  font-size: 0.8em;
 }
 /*Scroll end*/
 

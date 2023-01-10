@@ -36,3 +36,15 @@ toggle.addEventListener("change", (event) => {
     label.innerHTML = '<img src="assets/ico/ico-moon.png" alt="dark mood" class="ico-mood"/>';
   }
 });
+//Color Mood 2 for Responsive
+let toggle2 = document.getElementById("toggle-2");
+let label2 = document.getElementById("label_toggle-2");
+toggle2.addEventListener("change", (event) => {
+  let estado2 = event.target.checked;
+  document.body.classList.toggle("dark-mood");
+  if (estado2) {
+    label2.innerHTML = '<img src="assets/ico/ico-sun.png" alt="sun mood" class="ico-mood"/>';
+  }else {
+    label2.innerHTML = '<img src="assets/ico/ico-moon.png" alt="dark mood" class="ico-mood"/>';
+  }
+});
