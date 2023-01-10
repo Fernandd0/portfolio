@@ -23,3 +23,16 @@ navtheme.forEach((link) =>
     ul.classList.remove("show");
   })
 );
+
+//Color Mood
+let toggle = document.getElementById("toggle");
+let label = document.getElementById("label_toggle");
+toggle.addEventListener("change", (event) => {
+  let estado = event.target.checked;
+  document.body.classList.toggle("dark-mood");
+  if (estado) {
+    label.innerHTML = '<img src="assets/ico/ico-sun.png" alt="sun mood" class="ico-mood"/>';
+  }else {
+    label.innerHTML = '<img src="assets/ico/ico-moon.png" alt="dark mood" class="ico-mood"/>';
+  }
+});
