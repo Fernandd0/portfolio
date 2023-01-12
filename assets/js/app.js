@@ -31,7 +31,7 @@ toggle.addEventListener("change", (event) => {
   let estado = event.target.checked;
   document.body.classList.toggle("dark-mood");
   if (estado) {
-    label.innerHTML = '<img src="assets/ico/ico-sun.png" alt="sun mood" class="ico-mood"/>';
+    label.innerHTML = '<img src="assets/ico/ico-sun.png" alt="sun mood" class="ico-mood ico-mood-sun"/>';
   }else {
     label.innerHTML = '<img src="assets/ico/ico-moon.png" alt="dark mood" class="ico-mood"/>';
   }
@@ -43,7 +43,7 @@ toggle2.addEventListener("change", (event) => {
   let estado2 = event.target.checked;
   document.body.classList.toggle("dark-mood");
   if (estado2) {
-    label2.innerHTML = '<img src="assets/ico/ico-sun.png" alt="sun mood" class="ico-mood"/>';
+    label2.innerHTML = '<img src="assets/ico/ico-sun.png" alt="sun mood" class="ico-mood ico-mood-sun"/>';
   }else {
     label2.innerHTML = '<img src="assets/ico/ico-moon.png" alt="dark mood" class="ico-mood"/>';
   }
