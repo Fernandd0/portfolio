@@ -128,8 +128,6 @@ body{
   padding: 0 1.5em;
 }
 .ico-mood{
-  width: 1.8em;
-  height: 1.8em;
   cursor: pointer;
   filter: var(--color-img-2);
 }
@@ -157,13 +155,10 @@ body{
   border: none;
   padding: 0 20px;
   display: none;
-  line-height: 60px;
   cursor: pointer;
   transition: 0.3s ease;
 }
 .img-nav-toggle{
-  width: 1.8em;
-  height: 1.8em;
   cursor: pointer;
   filter: var(--color-img-2);
 }
@@ -205,9 +200,7 @@ body{
 }/*
 
 /*AboutMe*/
-.hero{
-  display: flex;
-  gap: 2em;
+.about-me{
   padding: 1.5em;
 
   border: .3em solid var(--third-color);
@@ -216,39 +209,69 @@ body{
   border-image-source: var(--border-img);
   border-image-outset: 2;
 }
-.bio-img{
-  height: 15em;
-  width: 15em;
-  image-rendering: pixelated;
-  padding-top: 2em;
+.bio{
+  justify-content:space-between;
+  display: flex;
 }
-.bio-title-c{
-  float: left;
-  justify-content: left;
+.c-bio-title{
+  text-align: left;
+  display: table;
 }
 .bio-title{
-  float: left;
   color: var(--secondary-color);
   font-size: var(--bold-font);
   background-color: var(--primary-color);
   padding: 0 1em;
-  margin: -2.5rem 0 0 0;
-  font-size: var(--bold-font);
+  margin: -2em 0 0 0;
   top: 0;
+}
+.c-bio-img{
+  height: auto;
+  display: flex;
+  /*align-items: center; para centrar Y*/
+  margin: .5em 1em 0 0;
+}
+.bio-img{
+  width: auto;
+  height: 12em;
+  image-rendering: pixelated;
 }
 .bio-text{
   color: var(--secondary-color);
-  margin-top: 1em;
+  margin: 0 0 1em 0;
   font-family: var(--font-family-2);
   font-size: var(--bold-font);
+  text-align: justify;
 }
 .btn-hero-c{
-  float: right;
+  /*float: right;*/
+  display:flex;
+  justify-content:flex-end;
 }
-/*AboutMe End*/
-
 /*More About Me*/
-/*More About Me End*/
+.c-hide-text{
+  margin: 0 0 1.5em 0;
+}
+.hide-text{
+  margin-top: 1em 0;
+  color: var(--secondary-color);
+  font-family: var(--font-family-2);
+  font-size: var(--bold-font);
+  text-align: justify;
+}
+.hide-list{
+  padding: 0 1.5em;
+}
+.hide-list-item{
+  font-size: var(--mini-font);
+}
+
+.c-hide-text{
+  display: none;
+}
+.c-show-text{
+  display: block;
+}
 
 /*Skills section*/
 .skills {
@@ -256,17 +279,24 @@ body{
   text-align: center;
   margin: 6em 0;
   padding: 1.5em;
+
+  border: .3em solid var(--third-color);
+  border-image-slice: 2;
+  border-image-width: 3;
+  border-image-source: var(--border-img);
+  border-image-outset: 2;
 }
 
 .skill-title-c{
-  margin: 0 0 1em 0;
+  text-align: left;
+  display: table;
 }
 .skill-title {
   color: var(--secondary-color);
   font-size: var(--bold-font);
   background-color: var(--primary-color);
   padding: 0 1em;
-  margin: -3.5rem 0 0rem;
+  margin: -2em 0 0 0;
   font-size: var(--bold-font);
   top: 0;
 }

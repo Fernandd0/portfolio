@@ -52,12 +52,13 @@
                 src="assets/ico/ico-moon.png"
                 alt="dark mood"
                 class="ico-mood"
+                width="30" height="30"
               />
             </label>
             <input type="checkbox" id="toggle-2">
           </li>
         </ul>
-        <button class="nav-toggle"> <img  class="img-nav-toggle" src="assets/ico/ico-bar.png"></button>
+        <button class="nav-toggle"> <img class="img-nav-toggle" src="assets/ico/ico-bar.png" alt="nav-toggle" width="30" height="30"></button>
       </nav>
     </header>
     <!--Color Mood-->
@@ -67,6 +68,7 @@
           src="assets/ico/ico-moon.png"
           alt="dark mood"
           class="ico-mood"
+          width="30" height="30"
         />
       </label>
       <input type="checkbox" id="toggle">
@@ -78,43 +80,55 @@
         <div class="div-portada-text">
           <h2 class="portada-titulo">Hi, I'm Fernando Solorzano</h2>
           <h1 class="portada-main">Student.<br>Junior developer.</h1>
-          <h2 class="portada-text"><b>I love and create front-end, the *backend* is all for me <br> and storing it Manage databases is my spend time.</b></h2>
+          <h2 class="portada-text"><b>I love and create front-end, the backend is all for me <br> and storing it Manage databases is my spend time.</b></h2>
           <div class="c-btn-portada">
             <button type="button" class="nes-btn is-normal btn-portada">Say Hello</button>
-            <button type="button" class="nes-btn is-warning btn-portada">Resume</button>
+            <button type="button" class="nes-btn is-error btn-portada">Resume</button>
           </div>
         </div>
         <div class="c-portada-img">
-          <img src="assets/img/avatar-3.png" class="portada-img" alt="me">
+          <img src="assets/img/avatar-3.png" class="portada-img" alt="avatar" width="100" height="100">
         </div>
       </div>
     </main>
 
-    <!--Hero Section-->
-    <section class="hero" id="about">
-      <img
-        src="assets/img/me-6.jpg"
-        alt="me"
-        class="bio-img"
-      />
-      <div class="bio">
-        <div class="bio-title-c">
+    <!--About Me-->
+    <section class="about-me" id="about">
+      <div class="about-c">
+        <div class="c-bio-title">
           <h2 class="bio-title">About Me</h2>
         </div>
-        <p class="bio-text">Hello there, I'm 18 years old. I'm a <b>junior full stack developer</b> from Peru. I'm a passionate developer who helps people <b>live life and not let life live them.</b></p>
-        <p class="bio-text"><b>If you can imagine it you can do it,</b> possibly a phrase that has marked and driven me in this world.</p>
-        <div class="btn-hero-c">
-          <button type="button" class="nes-btn is-warning">More About Me</button>
+        <div class="bio">
+          <div class="c-bio-img">
+            <img
+              src="assets/img/me-6.jpg"
+              alt="me"
+              class="bio-img"
+              width="100" height="100"
+            />
+          </div>
+          <div class="c-bio-text">
+            <p class="bio-text">Hello there, I'm 18 years old. I'm a <b>junior full stack developer</b> from Peru. I'm a passionate developer who helps people <b>live life and not let life live them.</b></p>
+            <p class="bio-text"><b>If you can imagine it you can do it,</b> possibly a phrase that has marked and driven me in this world.</p>
+          </div>
         </div>
       </div>
+      <!-- More About Me-->
+      <div class="c-hide-text" id="more_text">
+        <span class="hide-text">
+          <p>I love deport, especially basketball and soccer. Did you know that between basketball and soccer? although they are very different sports, the tactic is fundamental in basketball as well as the documentation and analysis to develop. This is how we can realize how things are related to the programming...</p>
+            <ul class="nes-list is-circle hide-list">
+              <li class="hide-list-item">📝 I'm a student or maybe I was a student, but I'm always learning.</li>
+              <li class="hide-list-item">🏀 I love basketball and the peculiar way we can learn programming from it.</li>
+              <li class="hide-list-item">📜 I write poems to free myself from the bugs.</li>
+              <li class="hide-list-item">🌱 I'm currently learning Web frameworks and PHP.</li>
+            </ul>
+        </span>
+      </div>
+      <div class="btn-hero-c">
+        <button type="button" class="nes-btn is-error btn_text" id="btn_text">More About Me</button>
+      </div>
     </section>
-
-    <!-- More About Me
-    <section class="more-about-me">
-      <h2>More About Me</h2>
-      <p>I love deport, especially basketball and soccer. Did you know that between basketball and soccer? although they are very different sports, the tactic is fundamental in basketball as well as the documentation and analysis to develop. This is how we can realize how things are related to the programming...</p>
-      <p>LOL</p>
-    </section>-->
 
     <!-- Skills section -->
     <section class="skills" id="skills">
@@ -129,53 +143,62 @@
             alt="Java"
             loading="lazy"
             class="icon-card"
+            width="48" height="48"
           />
           <img
             src="assets/ico/ico-python.svg"
             alt="Python"
             loading="lazy"
             class="icon-card"
+            width="48" height="48"
           />
           <img
             src="assets/ico/ico-javascript.svg"
             alt="Javascript"
             loading="lazy"
             class="icon-card"
+            width="48" height="48"
           />
           <img
             src="assets/ico/ico-html.svg"
             alt="HTML"
             loading="lazy"
             class="icon-card"
+            width="48" height="48"
           />
           <img
             src="assets/ico/ico-css.svg"
             alt="CSS"
             loading="lazy"
             class="icon-card"
+            width="48" height="48"
           />
           <img
             src="assets/ico/ico-mysql.svg"
             alt="MySQL"
             loading="lazy"
             class="icon-card"
+            width="48" height="48"
           />
           <img
             src="assets/ico/ico-linux.svg"
             alt="LINUX"
             class="icon-card"
+            width="48" height="48"
           />
           <img
             src="assets/ico/ico-git.svg"
             alt="GIT"
             loading="lazy"
             class="icon-card"
+            width="48" height="48"
           />
           <img
             src="assets/ico/ico-github.svg"
             alt="GitHub"
             loading="lazy"
             class="icon-card"
+            width="48" height="48"
           />
         </div>
       </div>
@@ -191,6 +214,7 @@
             alt="project 1"
             loading="lazy"
             class="project-pic"
+            width="100" height="100"
           />
           <h3 class="project-title">First Project</h3>
           <p class="project-details">
@@ -204,6 +228,7 @@
             alt="project 2"
             loading="lazy"
             class="project-pic"
+            width="100" height="100"
           />
           <h3 class="project-title">Second Project</h3>
           <p class="project-details">
@@ -217,6 +242,7 @@
             alt="project 3"
             loading="lazy"
             class="project-pic"
+            width="100" height="100"
           />
           <h3 class="project-title">Third Project</h3>
           <p class="project-details">
