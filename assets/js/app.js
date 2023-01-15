@@ -77,3 +77,26 @@ scrollUp.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+
+//Change img every 5s --> portada-img
+var cont = 0;
+
+function change() {
+  cont++;
+  switch(cont%3+1){
+    case 1:
+      document.getElementById("portada_img").src="assets/img/avatar.png";
+    break;
+    case 2:
+      document.getElementById("portada_img").src="assets/img/avatar-2.png";
+    break;
+    case 3:
+      document.getElementById("portada_img").src="assets/img/avatar-3.png";
+    break;
+  }
+}
+function inicio() {
+  setInterval(change, 3000);
+}
+window.onload=inicio;
