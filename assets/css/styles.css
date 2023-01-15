@@ -277,7 +277,7 @@ body{
 .skills {
   width: 100%;
   text-align: center;
-  margin: 6em 0;
+  margin: 8em 0;
   padding: 1.5em;
 
   border: .3em solid var(--third-color);
@@ -301,11 +301,11 @@ body{
   top: 0;
 }
 .skills-wrapper img {
-  padding: .4em;
+  width: 5em;
 }
 .icon-card {
-  width: 5em;
-  height: 5em;
+  width: 100%;
+  height: auto;
   margin: 1em .5em 1em .5em;
   border: .2em solid var(--third-color);
   cursor: pointer;
@@ -318,7 +318,6 @@ body{
 .icon-card:hover{
   transform: scale(.9);
 }
-/*Skills end*/
 
 /*Projects*/
 .projects{
