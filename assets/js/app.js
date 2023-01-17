@@ -100,3 +100,32 @@ function inicio() {
   setInterval(change, 3000);
 }
 window.onload=inicio;
+
+
+//Carrusel Projects
+const grande    = document.querySelector('.projects-container')
+const punto     = document.querySelectorAll('.projects-nav-punto')
+
+// Recorrer TODOS los punto
+punto.forEach( ( cadaPunto , i )=> {
+    // Asignamos un CLICK a cadaPunto
+    punto[i].addEventListener('click',()=>{
+
+        // Guardar la posición de ese PUNTO
+        let posicion  = i
+        // Calculando el espacio que debe DESPLAZARSE el GRANDE
+        let operacion = posicion * - 33.3
+
+        // MOVEMOS el grand
+        grande.style.transform = `translateX(${ operacion }%)`
+
+        // Recorremos TODOS los punto
+        punto.forEach( ( cadaPunto , i )=>{
+            // Quitamos la clase ACTIVO a TODOS los punto
+            punto[i].classList.remove('activo')
+        })
+        // Añadir la clase activo en el punto que hemos hecho CLICK
+        punto[i].classList.add('activo')
+
+    })
+})
