@@ -27,6 +27,7 @@
     href="assets/img/avatar.png"
     />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.css">
     <!-- Framework NES.css -->
     <!-- minify -->
     <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
@@ -209,56 +210,97 @@
       <div class="c-projects-title">
         <h2 class="projects-title">My Projects</h2>
       </div>
-      <dviv class="projects-carrusel">
+      <dviv class="projects-carousel">
         <div class="projects-container">
-          <div class="project-card">
-            <img
-              src="assets/img/project-2.jpg"
-              alt="project 1"
-              loading="lazy"
-              class="card-pic"
-              width="100" height="100"
-            />
-            <h3 class="card-title">First Project</h3>
-            <p class="card-details">
-              zzz
-            </p>
-            <a href="https://fernandd0.github.io/Error404Page.github.io/" target="_blank" class="project-link">zzz</a>
+          <button aria-label="anterior" class="carousel-anterior">&lt;</button>
+          <div class="carousel-list">
+            <div class="project-card">
+                <img
+                  src="assets/img/project-2.jpg"
+                  alt="project 1"
+                  loading="lazy"
+                  class="card-pic"
+                  width="100" height="100"
+                />
+                <h3 class="card-title">First Project</h3>
+                <p class="card-details">
+                  zzz
+                </p>
+                <a href="https://fernandd0.github.io/Error404Page.github.io/" target="_blank" class="project-link">zzz</a>
+            </div>
+            <div class="project-card">
+                <img
+                  src="assets/img/project-3.jpg"
+                  alt="project 2"
+                  loading="lazy"
+                  class="card-pic"
+                  width="100" height="100"
+                />
+                <h3 class="card-title">Second Project</h3>
+                <p class="card-details">
+                  zzz
+                </p>
+                <a href="https://fernandd0.github.io/Error404Page.github.io/" target="_blank" class="project-link">zzz</a>
+            </div>
+            <div class="project-card">
+                <img
+                  src="assets/img/project-4.jpg"
+                  alt="project 3"
+                  loading="lazy"
+                  class="card-pic"
+                  width="100" height="100"
+                />
+                <h3 class="card-title">Third Project</h3>
+                <p class="card-details">
+                  zzz
+                </p>
+                <a href="https://fernandd0.github.io/Error404Page.github.io/" target="_blank" class="project-link">zzz</a>
+            </div>
+            <div class="project-card">
+                <img
+                  src="assets/img/project-2.jpg"
+                  alt="project 3"
+                  loading="lazy"
+                  class="card-pic"
+                  width="100" height="100"
+                />
+                <h3 class="card-title">Third Project</h3>
+                <p class="card-details">
+                  zzz
+                </p>
+                <a href="https://fernandd0.github.io/Error404Page.github.io/" target="_blank" class="project-link">zzz</a>
+            </div>
+            <div class="project-card">
+                <img
+                  src="assets/img/project-4.jpg"
+                  alt="project 3"
+                  loading="lazy"
+                  class="card-pic"
+                  width="100" height="100"
+                />
+                <h3 class="card-title">Third Project</h3>
+                <p class="card-details">
+                  zzz
+                </p>
+                <a href="https://fernandd0.github.io/Error404Page.github.io/" target="_blank" class="project-link">zzz</a>
+            </div>
+            <div class="project-card">
+                <img
+                  src="assets/img/project-3.jpg"
+                  alt="project 3"
+                  loading="lazy"
+                  class="card-pic"
+                  width="100" height="100"
+                />
+                <h3 class="card-title">Third Project</h3>
+                <p class="card-details">
+                  zzz
+                </p>
+                <a href="https://fernandd0.github.io/Error404Page.github.io/" target="_blank" class="project-link">zzz</a>
+            </div>
           </div>
-          <div class="project-card">
-            <img
-              src="assets/img/project-3.jpg"
-              alt="project 2"
-              loading="lazy"
-              class="card-pic"
-              width="100" height="100"
-            />
-            <h3 class="card-title">Second Project</h3>
-            <p class="card-details">
-              zzz
-            </p>
-            <a href="https://fernandd0.github.io/Error404Page.github.io/" target="_blank" class="project-link">zzz</a>
-          </div>
-          <div class="project-card">
-            <img
-              src="assets/img/project-4.jpg"
-              alt="project 3"
-              loading="lazy"
-              class="card-pic"
-              width="100" height="100"
-            />
-            <h3 class="card-title">Third Project</h3>
-            <p class="card-details">
-              zzz
-            </p>
-            <a href="https://fernandd0.github.io/Error404Page.github.io/" target="_blank" class="project-link">zzz</a>
-          </div>
+          <button aria-label="siguiente" class="carousel-siguiente">&gt;</button>
         </div>
-        <ul class="projects-nav">
-          <li class="projects-nav-punto activo"></li>
-          <li class="projects-nav-punto"></li>
-          <li class="projects-nav-punto"></li>
-        </ul>
       </dviv>
     </section>
 
@@ -344,7 +386,7 @@
     </footer>
 
     <!-- Website scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.js"></script><!--for carrusel-->
     <script src="assets/js/app.js"></script>
-
   </body>
 </html>
