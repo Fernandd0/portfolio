@@ -362,6 +362,7 @@ body{
 .carousel-anterior:hover,
 .carousel-siguiente:hover {
 	color: var(--secondary-color);
+  transform: scale(1.1);
 }
 .carousel-anterior {
 	left: -15px;
@@ -374,9 +375,8 @@ body{
 }
 .project-card{
   margin: 0 .5em;
-  padding: 2em 1em;
-  cursor: pointer;
   transition: 0.3s ease-in-out;
+  padding: .5em;
 
   border: .15em solid var(--third-color);
   border-image-slice: 3;
@@ -387,20 +387,24 @@ body{
   border-image-source: var(--border-img-2);
 }
 .card-pic{
-  width: 45%;
+  width: 90%;
   height: auto;
 }
 .card-title{
-  margin: 1em 0;
+  margin: 1em 0 .5em 0;
   color: var(--secondary-color);
 }
 .card-details{
   margin: 1em 0;
   color: var(--fifth-color);
+  transition: 0.3s ease-in-out;
 }
-.project-link{
-  color: var(--fifth-color);
-text-decoration: none;
+.project-card:hover > .card-details{
+  color: var(--secondary-color);
+}
+.project-link img{
+  cursor: pointer;
+  filter: var(--color-img-2);
 }
 
 /*Social Media*/
@@ -409,7 +413,7 @@ text-decoration: none;
   flex-direction: column;
   position: fixed;
   right: 1%;
-  bottom: 50%;
+  bottom: 45%;
 }
 .nes-icon {
   width: 2em;
@@ -431,7 +435,6 @@ text-decoration: none;
   transform: rotate(90deg);
   font-size: var(--bold-font);
 }
-/*Scroll end*/
 
 /*Footer*/
 footer{
@@ -441,7 +444,7 @@ footer{
   margin: 0em -9em -2em -9em;
   bottom: 0;
   left: 0;
-  color: var();
+  color: var(--secondary-color);
 }
 footer p {
   display: inline;
@@ -538,5 +541,16 @@ footer p {
   .portada-img{
     margin: -18em 0em 0 4em;
     width: 26em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+	.bio {
+		flex-direction: column;
+	}
+  .c-bio-img{
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
   }
 }
