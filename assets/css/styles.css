@@ -317,7 +317,7 @@ body{
 }
 .icon-card:hover{
   border-image-source: var(--border-img-2);
-  transform: scale(.9);
+  transform: scale(1.1);
 }
 
 /*Projects*/
@@ -419,9 +419,17 @@ text-decoration: none;
 
 /*Scroll*/
 .scroll-c{
-  display: flex;
+  transform: scale(0);
   cursor: pointer;
   font-size: 0.8em;
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+}
+.scroll span{
+  display: block;
+  transform: rotate(90deg);
+  font-size: var(--bold-font);
 }
 /*Scroll end*/
 

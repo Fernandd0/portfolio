@@ -67,18 +67,6 @@ function changeStyle(){
 };
 
 
-// Scroll to top selection
-const scrollUp = document.querySelector("#scroll-up");
-// scroll to top functionality
-scrollUp.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-});
-
-
 //Change img every 5s --> portada-img
 var cont = 0;
 
@@ -130,3 +118,27 @@ window.addEventListener('load', function(){
 		]
 	});
 });
+
+
+// Scroll to top selection
+const scrollUp = document.querySelector("#scroll-up");
+// scroll to top functionality
+scrollUp.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});
+
+buttonUp = document.getElementById("scroll-up");
+
+window.onscroll = function(){
+  var scroll = document.documentElement.scrollTop;
+
+  if (scroll > 100){
+    buttonUp.style.transform = "scale(1)";
+  }else if(scroll < 100){
+    buttonUp.style.transform = "scale(0)";
+  }
+}
