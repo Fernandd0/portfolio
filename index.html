@@ -347,18 +347,20 @@
 
     <!-- Contact section -->
     <section class="contact" id="contact">
-      <h2>Dont be a stranger!</h2>
+      <div class="c-contact-title">
+        <h2 class="contact-title">Dont be a stranger!</h2>
+      </div>
       <div class="contact-form-container">
         <div class="contact-form">
-          <form action="https://formspree.io/f/xyyvlvdo" method="POST">
+          <form action="https://formspree.io/f/xayznvea" method="POST">
             <div class="form-control">
               <label for="name">Name</label>
               <input
                 type="text"
                 id="name"
                 name="sender-name"
-                placeholder="Enter Your Name"
-                class="input-field"
+                placeholder="Enter your name"
+                class="input-field nes-input"
                 required
               />
             </div>
@@ -368,8 +370,8 @@
                 type="email"
                 id="email"
                 name="sender-email"
-                placeholder="Enter Your Email"
-                class="input-field"
+                placeholder="Enter your Email, Twitter username or Linkedin"
+                class="input-field nes-input"
                 required
               />
             </div>
@@ -379,18 +381,20 @@
                 id="message"
                 cols="60"
                 rows="10"
-                placeholder="Enter Your Message"
+                placeholder="Enter your message"
                 name="message"
-                class="input-field"
+                class="input-field nes-textarea"
                 required
               ></textarea>
             </div>
-            <input
-              type="submit"
-              value="Submit"
-              id="submit-btn"
-              class="submit-btn"
-            />
+            <div class="c-submit-btn">
+              <input
+                type="submit"
+                value="Submit"
+                id="submit-btn"
+                class="nes-btn is-error submit-btn"
+              />
+            </div>
           </form>
         </div>
       </div>
