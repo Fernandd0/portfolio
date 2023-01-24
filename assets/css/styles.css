@@ -35,7 +35,7 @@ html
 body{
   background-color:var(--primary-color);
   height: 100%;
-  padding: 2em 9em;
+  padding: 2em 9em 0 9em;
 }
 /*General ends*/
 
@@ -472,7 +472,7 @@ body{
   cursor: pointer;
   font-size: 0.8em;
   position: fixed;
-  bottom: 2%;
+  bottom: 4%;
   right: 1%;
 }
 .scroll span{
@@ -493,6 +493,7 @@ footer{
 }
 .c-footer-text p{
   display: inline;
+  font-size: var(--mini-font);
 }
 .c-footer-text{
   display: flex;
@@ -510,9 +511,10 @@ footer{
 .footer-link:hover{
   color: var(--third-color);
 }
+
 /*Responsive <320*/
 @media only screen and (min-width: 320px) and (max-width: 1024px){
-    /*Nav*/
+  /*Nav*/
     nav ul {
       position: fixed;
       background-color: var(--third-color);
@@ -557,28 +559,35 @@ footer{
     .ico-mood-sun:hover{
       filter: var(--color-img-2);
     }
-    /*Portada img*/
-    .portada-img{
-      display: none;
-    }
 }
 
-/*Responsive 320>x<540*/
-@media only screen and (min-width:320px) and (max-width:479px){
+/*Responsive <1024px*/
+@media screen and (max-width: 1024px) {
+  html
+  body{
+    padding: 2em 5em;
+  }
+  .header{
+    margin: -1em -3em;
+  }
+  footer{
+    margin: 0em -5em -2em -5em;
+  }
+  /*Portada img*/
+  .portada-img{
+    display: none;
+  }
+	.bio {
+		flex-direction: column;
+	}
+  .c-bio-img{
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+  }
 }
 
-/*Responsive 541>x<768*/
-@media only screen and (min-width:480px) and (max-width:767px){
-}
-
-/*Responsive 769>x<1024*/
-@media only screen and (min-width:768px) and (max-width:1023px){
-}
-
-@media only screen and (min-width:1024px) and (max-width:1200px){
-}
-
-/*Pantallas mayores a 1500px*/
+/*Responsive >1500px*/
 @media (min-width:1500px){
   .portada-titulo{
     font-size: 2em;
@@ -595,13 +604,45 @@ footer{
   }
 }
 
-@media screen and (max-width: 800px) {
-	.bio {
-		flex-direction: column;
-	}
-  .c-bio-img{
-    display: flex;
-    justify-content: center;
-    margin: 1em 0;
+/*Responsive <768*/
+@media screen and (max-width:768px){
+  html
+  body{
+    padding: 2em 2em;
+  }
+  .header{
+    margin: -1em -1em;
+  }
+  footer{
+    margin: 0em -2em -2em -2em;
+  }
+  .c-footer-text p{
+    font-size: 0.7em;
+  }
+  .footer-text-2{
+    margin-right: 0em;
+  }
+}
+
+/*Responsive <480*/
+@media screen and (max-width:480px){
+  html
+  body{
+    padding: 1em 1em;
+  }
+  .header{
+    margin: -0.5em -0.5em;
+  }
+  footer{
+    margin: 0em -1em -1em -1em;
+  }
+  .c-footer-text p{
+    font-size: 0.4em;
+  }
+  .footer-text-1{
+    padding: .99Sem 0 0 0;
+  }
+  .footer-text-2{
+    margin-right: 0em;
   }
 }
