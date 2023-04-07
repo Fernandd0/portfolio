@@ -273,53 +273,6 @@ body{
   display: block;
 }
 
-/*Skills section*/
-.skills {
-  width: 100%;
-  text-align: center;
-  margin: 8em 0;
-  padding: 1.5em;
-
-  border: .3em solid var(--third-color);
-  border-image-slice: 2;
-  border-image-width: 3;
-  border-image-source: var(--border-img);
-  border-image-outset: 2;
-}
-.skill-title-c{
-  text-align: left;
-  display: table;
-}
-.skill-title {
-  color: var(--secondary-color);
-  font-size: var(--bold-font);
-  background-color: var(--primary-color);
-  padding: 0 1em;
-  margin: -2em 0 0 0;
-  font-size: var(--bold-font);
-  top: 0;
-}
-.skills-wrapper img {
-  width: 5em;
-}
-.icon-card {
-  width: 100%;
-  height: auto;
-  margin: 1em .5em 1em .5em;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-
-  border: .2em solid var(--third-color);
-  border-image-slice: 3;
-  border-image-width: 3;
-  border-image-source: var(--border-img-3);
-  border-image-outset: 3;
-}
-.icon-card:hover{
-  border-image-source: var(--border-img-2);
-  transform: scale(1.1);
-}
-
 /*Projects*/
 .projects{
   width: 100%;
@@ -407,6 +360,53 @@ body{
   filter: var(--color-img-2);
 }
 
+/*Skills section*/
+.skills {
+  width: 100%;
+  text-align: center;
+  margin: 8em 0;
+  padding: 1.5em;
+
+  border: .3em solid var(--third-color);
+  border-image-slice: 2;
+  border-image-width: 3;
+  border-image-source: var(--border-img);
+  border-image-outset: 2;
+}
+.skill-title-c{
+  text-align: left;
+  display: table;
+}
+.skill-title {
+  color: var(--secondary-color);
+  font-size: var(--bold-font);
+  background-color: var(--primary-color);
+  padding: 0 1em;
+  margin: -2em 0 0 0;
+  font-size: var(--bold-font);
+  top: 0;
+}
+.skills-wrapper img {
+  width: 5em;
+}
+.icon-card {
+  width: 100%;
+  height: auto;
+  margin: 1em .5em 1em .5em;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  border: .2em solid var(--third-color);
+  border-image-slice: 3;
+  border-image-width: 3;
+  border-image-source: var(--border-img-3);
+  border-image-outset: 3;
+}
+.icon-card:hover{
+  border-image-source: var(--border-img-2);
+  transform: scale(1.1);
+}
+
 /*Contact*/
 .contact{
   width: 100%;
@@ -422,6 +422,11 @@ body{
 .c-contact-title{
   text-align: left;
   display: table;
+}
+.contact-text{
+  color: var(--sixth-color);
+  font-family: var(--font-family-2);
+  margin-top: -1.5em;
 }
 .contact-title{
   color: var(--secondary-color);
