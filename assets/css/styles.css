@@ -37,7 +37,16 @@ body{
   height: 100%;
   padding: 2em 9em 0 9em;
 }
-/*General ends*/
+
+/*Message: Update*/
+.c-message{
+  position: fixed;
+  top: 100px;
+  left: 2em;
+  z-index: 1;
+  display: flex;
+  transition: all 0.3s ease;
+}
 
 /*Navbar*/
 .header{
@@ -45,7 +54,7 @@ body{
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   height: 3em;
   background-color:var(--primary-color);
   margin: -1em -3em;
@@ -197,7 +206,7 @@ body{
 /*.nes-btn{
   margin: 0;
   box-shadow: 0 0 0.4em 0.3em var(--sixth-color);
-}/*
+}*/
 
 /*AboutMe*/
 .about-me{
@@ -627,6 +636,12 @@ footer{
   .footer-text-2{
     margin-right: 0em;
   }
+  .c-message{
+    left: 0em;
+  }
+  .c-message i{
+    display: none;
+  }
 }
 
 /*Responsive <480*/
@@ -649,5 +664,8 @@ footer{
   }
   .footer-text-2{
     margin-right: 0em;
+  }
+  .c-message{
+    font-size: 0.7em;
   }
 }

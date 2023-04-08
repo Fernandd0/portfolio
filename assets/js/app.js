@@ -133,12 +133,17 @@ scrollUp.addEventListener("click", () => {
 
 buttonUp = document.getElementById("scroll-up");
 
+// Message: update
+message = document.getElementById("c-message");
+
 window.onscroll = function(){
   var scroll = document.documentElement.scrollTop;
 
   if (scroll > 100){
     buttonUp.style.transform = "scale(1)";
+    message.style.transform = "scale(0)";
   }else if(scroll < 100){
     buttonUp.style.transform = "scale(0)";
+    message.style.transform = "scale(1)";
   }
 }
