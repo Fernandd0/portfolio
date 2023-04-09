@@ -60,9 +60,9 @@ function changeStyle(){
   more_text.classList.toggle("c-show-text");
 
   if(more_text.classList.contains("c-show-text")){
-    btn_text.innerHTML = "Less About Me";
+    btn_text.innerHTML = "Menos sobre mi";
   } else {
-    btn_text.innerHTML = "More About Me";
+    btn_text.innerHTML = "Más sobre mi";
   };
 };
 
