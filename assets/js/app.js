@@ -46,7 +46,7 @@ toggle2.addEventListener("change", (event) => {
   if (estado2) {
     label2.innerHTML = '<img src="assets/ico/ico-sun.png" alt="sun mood" class="ico-mood ico-mood-sun" width="30" height="30"/>';
   }else {
-    label2.innerHTML = '<img src="assets/ico/ico-moon.png" alt="dark mood" class="ico-mood" width="30" height="30"/>';
+    label2.innerHTML = '<img src="assets/ico/ico-moon.png" alt="dark mood" class="ico-mood ico-mood-moon" width="30" height="30"/>';
   }
 });
 

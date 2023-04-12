@@ -548,7 +548,7 @@ footer{
       border-image-outset: 3;
     }
     .nav-link{
-      color: var(--primary-color);
+      color: var(--fourth-color);
       border: none;
       padding: 0;
     }
@@ -568,10 +568,10 @@ footer{
       justify-content: center;
     }
     .ico-mood{
-      filter: var(--color-img);
-    }
-    .ico-mood-sun:hover{
       filter: var(--color-img-2);
+    }
+    .ico-mood-moon{
+      filter: var(--color-img);
     }
 }
 
@@ -641,6 +641,9 @@ footer{
   }
   .c-message i{
     display: none;
+  }
+  .img-warning{
+    width: 20px;
   }
 }
 

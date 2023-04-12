@@ -37,7 +37,11 @@
   <body>
     <section class="c-message" id="c-message">
       <i class="nes-ash"></i>
-      <p class="nes-balloon from-left">⚠️Esta página está siendo actualizada⚠️</p>
+      <p class="nes-balloon from-left">
+        <img class="img-warning" src="assets/ico/ico-warning.svg" width="30" height="30">
+        Esta página está siendo actualizada
+        <img class="img-warning" src="assets/ico/ico-warning.svg" width="30" height="30">
+      </p>
     </section>
 
     <!--Navbar-->
@@ -57,14 +61,14 @@
               <img
                 src="assets/ico/ico-moon.png"
                 alt="dark mood"
-                class="ico-mood"
+                class="ico-mood ico-mood-moon"
                 width="30" height="30"
               />
             </label>
             <input type="checkbox" id="toggle-2">
           </li>
         </ul>
-        <button class="nav-toggle"> <img class="img-nav-toggle" src="assets/ico/ico-bar.png" alt="nav-toggle" width="30" height="30"></button>
+        <button class="nav-toggle"> <img class="img-nav-toggle" src="assets/ico/ico-burger.svg" alt="nav-toggle" width="40" height="40"></button>
       </nav>
     </header>
     <!--Color Mood-->
@@ -73,7 +77,7 @@
         <img
           src="assets/ico/ico-moon.png"
           alt="dark mood"
-          class="ico-mood"
+          class="ico-mood ico-mood-moon"
           width="30" height="30"
         />
       </label>
@@ -302,6 +306,13 @@
           <img
             src="assets/ico/ico-javascript.svg"
             alt="Javascript"
+            loading="lazy"
+            class="icon-card"
+            width="48" height="48"
+          />
+          <img
+            src="assets/ico/ico-php.svg"
+            alt="PHP"
             loading="lazy"
             class="icon-card"
             width="48" height="48"
