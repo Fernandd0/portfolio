@@ -242,13 +242,14 @@ body{
 }
 .bio-img{
   width: auto;
-  height: 12em;
-  image-rendering: pixelated;
+  height: 15em;
+  /*image-rendering: pixelated;*/
+  border-bottom: .3em solid var(--third-color);
 }
 .bio-text{
   color: var(--secondary-color);
   margin: 0 0 1em 0;
-  font-family: var(--font-family-3);
+  font-family: var(--font-family-2);
   font-size: var(--bold-font);
   text-align: justify;
 }
@@ -264,7 +265,7 @@ body{
 .hide-text{
   margin-top: 1em 0;
   color: var(--secondary-color);
-  font-family: var(--font-family-3);
+  font-family: var(--font-family-2);
   font-size: var(--bold-font);
   text-align: justify;
 }
@@ -434,7 +435,7 @@ body{
 }
 .contact-text{
   color: var(--sixth-color);
-  font-family: var(--font-family-3);
+  font-family: var(--font-family-2);
   font-size: var(--normal-font);
 }
 .contact-title{
@@ -655,6 +656,12 @@ footer{
   }
   .header{
     margin: -0.5em -0.5em;
+  }
+  .bio-text{
+    font-size: var(--normal-font);
+  }
+  .hide-text{
+    font-size: var(--normal-font);
   }
   footer{
     margin: 0em -1em -1em -1em;
