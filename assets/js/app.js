@@ -101,18 +101,32 @@ window.addEventListener('load', function(){
 		},
 		responsive: [
 			{
-			  // screens greater than >= 775px
-			  breakpoint: 450,
+			  // screens greater than >= 270px
+			  breakpoint: 300,
 			  settings: {
-				slidesToShow: 2,
-				slidesToScroll: 2
+				slidesToShow: 1,
+				slidesToScroll: 1,
 			  }
 			},{
 			  // screens greater than >= 1024px
-			  breakpoint: 800,
+			  breakpoint: 768,
+			  settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2,
+			  }
+			},{
+			  // screens greater than >= 1024px
+			  breakpoint: 1400,
 			  settings: {
 				slidesToShow: 3,
-				slidesToScroll: 3
+				slidesToScroll: 3,
+			  }
+			},{
+			  // screens greater than >= 2560px
+			  breakpoint: 2100,
+			  settings: {
+				slidesToShow: 4,
+				slidesToScroll: 4,
 			  }
 			}
 		]

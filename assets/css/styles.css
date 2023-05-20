@@ -314,61 +314,125 @@ body{
 }
 .carousel-anterior,
 .carousel-siguiente{
-  color: var(--fifth-color);
+  color: var(--secondary-color);
   position: absolute;
 	top: calc(50% - 30px);
   border: none;
 	cursor: pointer;
 	text-align: center;
 	background: none;
-  font-size: 1em;
-}
-.carousel-anterior:hover,
-.carousel-siguiente:hover {
-	color: var(--secondary-color);
-  transform: scale(1.1);
+  font-size: 1.5em;
 }
 .carousel-anterior {
-	left: -15px;
+	left: -25px;
 }
 .carousel-siguiente {
-	right: -15px;
+	right: -25px;
 }
 .carousel-list {
 	overflow: hidden;
+  height: 400px;
 }
-.project-card{
-  margin: 0 .5em;
-  transition: 0.3s ease-in-out;
-  padding: .5em;
 
-  border: .15em solid var(--third-color);
-  border-image-slice: 3;
-  border-image-width: 3;
-  border-image-source: var(--border-img-3);
-}
-.project-card:hover{
-  border-image-source: var(--border-img-2);
-}
-.card-pic{
-  width: 90%;
-  height: auto;
-}
-.card-title{
-  margin: 1em 0 .5em 0;
-  color: var(--secondary-color);
-}
-.card-details{
-  margin: 1em 0;
-  color: var(--fifth-color);
+.project-card{
   transition: 0.3s ease-in-out;
+  border: .5em solid var(--sixth-color);
+  border-image-slice: 2;
+  border-image-source: var(--border-img);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.project-card:hover > .card-details{
-  color: var(--secondary-color);
+
+.card-animation-cont {
+  display: flex;
 }
-.project-link img{
-  cursor: pointer;
-  filter: var(--color-img-2);
+.card-animation-cont .card {
+  position: relative;
+  height: 400px;
+  width: 350px;
+  overflow: hidden;
+  margin: 0 0.8em;
+}
+/* Shadow over images */
+.card-animation-cont .card::after {
+  content: "";
+  position: absolute;
+  height: 90%;
+  inset: 0;
+  z-index: 10;
+  background-color: rgb(0, 0, 0, 0.1);
+  z-index: 1;
+  transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.card-animation-cont .card img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  transform-origin: bottom;
+  transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.card-animation-cont .card .info {
+  position: absolute;
+  bottom: 0;
+  background-color: rgb(225, 225, 225);
+  z-index: 2;
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  text-decoration: none;
+  color: rgb(20, 20, 20);
+  transform: translateY(68%); /* Change this property */
+  transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+
+}
+.card-animation-cont .card .info strong {
+  font-size: var(--normal-font);
+  text-transform: uppercase;
+}
+.card-animation-cont .card .info .sub-title {
+  font-size: var(--mini-font);
+  opacity: 0.7;
+  margin-top: 5px;
+  font-weight: 500;
+}
+.card-animation-cont .card .info hr {
+  margin: 15px;
+  border: none;
+  border-bottom: 1px solid var(--sixth-color);
+}
+.card-animation-cont .card .hide-info {
+  transform: translateY(25px);
+  opacity: 0;
+  transition: 0.4s;
+  transition-delay: 0.3s;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+.card-animation-cont .card .hide-info a {
+  position: relative;
+  top: 3px;
+  color: var(--sixth-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.card-animation-cont .card .hide-info a:hover {
+  color: var(--sixth-color);
+}
+.card-animation-cont .card:hover > .info {
+  transform: translateY(0);
+}
+.card-animation-cont .card:hover > img {
+  transform: scale(1.2);
+}
+.card-animation-cont .card:hover::after {
+  background-color: rgb(0, 0, 0, 0.5);
+}
+.card-animation-cont .card:hover .hide-info {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /*Skills section*/
@@ -434,11 +498,11 @@ body{
   text-align: left;
   display: table;
 }
-.contact-text{
+/*.contact-text{
   color: var(--sixth-color);
   font-family: var(--font-family-2);
   font-size: var(--normal-font);
-}
+}*/
 .contact-title{
   color: var(--secondary-color);
   font-size: var(--bold-font);
@@ -486,7 +550,6 @@ body{
 .scroll-c{
   transform: scale(0);
   cursor: pointer;
-  font-size: 0.8em;
   position: fixed;
   bottom: 4%;
   right: 1%;
@@ -494,7 +557,7 @@ body{
 .scroll span{
   display: block;
   transform: rotate(90deg);
-  font-size: var(--bold-font);
+  font-size: var(--normal-font);
 }
 
 /*Footer*/
