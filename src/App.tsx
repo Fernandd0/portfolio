@@ -6,7 +6,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
-import { Navbar } from "./layout/Navbar";
+import { DefaultLayout } from "./layout/DefaultLayout";
 
 function App() {
   const router = createBrowserRouter(
@@ -24,12 +24,9 @@ function App() {
 
 const Root = () => {
   return (
-    <>
-      <Navbar />
-      <main className="min-h-[calc(100vh-379px-200px)]">
-        <Outlet />
-      </main>
-    </>
+    <DefaultLayout>
+      <Outlet />
+    </DefaultLayout>
   );
 };
 

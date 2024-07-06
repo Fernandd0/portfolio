@@ -60,9 +60,9 @@ export const Navbar = () => {
       } lg:overflow-visible`}
     >
       <Container>
-        <nav className="relative flex items-center justify-between text-black border-4 border-black mt-4 h-auto shadow-default">
+        <nav className="relative flex items-center justify-between text-black border-4 border-primary mt-4 h-auto shadow-default">
           <Link to={"/"} id="1">
-            <span className="font-retro text-[16px] hover:bg-black hover:text-white py-2 px-4 flex justify-center items-ceter border-r-4 border-black">
+            <span className="font-retro text-[16px] bg-black text-white py-2 px-4 flex justify-center items-ceter border-r-4 border-primary">
               {">_"}
               <img src="" />
             </span>
