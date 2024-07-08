@@ -329,8 +329,9 @@ html body {
   border-image-outset: 2;
 }
 
-.info h4{
-  margin:0
+.info h4 {
+  margin: 0;
+  padding: 0;
 }
 .icon-container {
   display: flex;
@@ -385,6 +386,9 @@ html body {
   border: 0.5em solid var(--sixth-color);
   border-image-slice: 2;
   border-image-source: var(--border-img);
+}
+.project-card img {
+  object-fit: cover;
 }
 .project-card:hover {
   box-shadow: 0 0 10px var(--primary-shadow);
@@ -488,14 +492,14 @@ html body {
   margin-top: 1em;
 }
 
-.project-icons a i{
+.project-icons a i {
   display: flex;
   align-items: center;
   text-decoration: none;
   transition: color 0.3s ease;
   color: var(--secondary-color);
   cursor: pointer;
-  font-size: 2em; 
+  font-size: 2em;
 }
 
 .project-icons a i:hover {
