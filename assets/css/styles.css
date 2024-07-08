@@ -43,14 +43,34 @@ html body {
   padding: 2em 9em 0 9em;
 }
 
-/*Message: Update*/
+/*Update*/
 .c-message {
   position: fixed;
-  top: 100px;
-  left: 2em;
-  z-index: 1;
+  bottom: 1em;
   display: flex;
-  transition: all 0.3s ease;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform: translateX(-100%);
+  opacity: 0;
+  left: 20px;
+  z-index: 9;
+}
+.c-message.hide {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.c-message.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.nes-balloon {
+  margin-left: 0.5em;
+  font-size: 1em;
+}
+
+.img-warning {
+  margin-left: 0.5em;
 }
 
 /*Navbar*/
@@ -192,7 +212,7 @@ html body {
   color: var(--sixth-color);
   font-family: var(--font-family-2);
   font-size: var(--bold-font);
-  margin: -6em 0 0 0;
+  margin: -4em 0 0 0;
 }
 .portada-main {
   color: var(--secondary-color);
@@ -216,6 +236,10 @@ html body {
   margin: 0;
   box-shadow: 0 0 0.4em 0.3em var(--sixth-color);
 }*/
+.hidden-div {
+  visibility: hidden;
+  padding-top: 100px;
+}
 
 /*AboutMe*/
 .about-me {
@@ -253,7 +277,7 @@ html body {
   width: auto;
   height: 15em;
   /*image-rendering: pixelated;*/
-  border-bottom: 0.3em solid var(--third-color);
+  border-bottom: 0.5em solid var(--third-color);
 }
 .bio-text {
   color: var(--secondary-color);
@@ -296,7 +320,6 @@ html body {
 .projects {
   width: 100%;
   text-align: center;
-  margin: 8em 0;
   padding: 3em 2em;
 
   border: 0.3em solid var(--third-color);
@@ -305,6 +328,22 @@ html body {
   border-image-source: var(--border-img);
   border-image-outset: 2;
 }
+
+.info h4{
+  margin:0
+}
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.icon-large {
+  font-size: 1.8em;
+  color: inherit;
+}
+
 .c-projects-title {
   text-align: left;
   display: table;
@@ -441,11 +480,37 @@ html body {
   transform: translateY(0);
 }
 
+.project-icons {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.project-icons a i{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  color: var(--secondary-color);
+  cursor: pointer;
+  font-size: 2em; 
+}
+
+.project-icons a i:hover {
+  color: #1414b8;
+}
+.text-info {
+  color: var(--sixth-color);
+  font-family: var(--font-family-2);
+  font-size: var(--mini-font);
+  font-weight: 600;
+}
 /*Skills section*/
-.skills {
+.skills-section {
   width: 100%;
   text-align: center;
-  margin: 8em 0;
   padding: 1.5em;
 
   border: 0.3em solid var(--third-color);
@@ -489,10 +554,10 @@ html body {
 }
 
 /*Contact*/
-.contact {
+.contact-section {
   width: 100%;
   margin-bottom: 8em;
-  padding: 3em 2em;
+  padding: 1em 2em;
 
   border: 0.3em solid var(--third-color);
   border-image-slice: 2;
@@ -504,17 +569,18 @@ html body {
   text-align: left;
   display: table;
 }
-/*.contact-text{
+.contact-text {
   color: var(--sixth-color);
   font-family: var(--font-family-2);
   font-size: var(--normal-font);
-}*/
+  font-weight: 600;
+}
 .contact-title {
   color: var(--secondary-color);
   font-size: var(--bold-font);
   background-color: var(--primary-color);
   padding: 0 1em;
-  margin: -3em 0 0 0;
+  margin: -2em 0 0 0;
   top: 0;
 }
 .form-control label {
@@ -712,7 +778,7 @@ footer {
     display: none;
   }
   .img-warning {
-    width: 20px;
+    display: none;
   }
 }
 
@@ -743,6 +809,6 @@ footer {
     margin-right: 0em;
   }
   .c-message {
-    font-size: 0.7em;
+    font-size: 0.5em;
   }
 }

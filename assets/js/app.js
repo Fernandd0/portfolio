@@ -148,16 +148,27 @@ scrollUp.addEventListener("click", () => {
 buttonUp = document.getElementById("scroll-up");
 
 // Message: update
-message = document.getElementById("c-message");
+document.addEventListener("DOMContentLoaded", function() {
+  const messageElement = document.getElementById("c-message");
 
-window.onscroll = function(){
-  var scroll = document.documentElement.scrollTop;
+  setTimeout(() => {
+    messageElement.classList.add("show");
+  }, 2000);
 
-  if (scroll > 100){
-    buttonUp.style.transform = "scale(1)";
-    message.style.transform = "scale(0)";
-  }else if(scroll < 100){
-    buttonUp.style.transform = "scale(0)";
-    message.style.transform = "scale(1)";
+  setTimeout(() => {
+    messageElement.classList.remove("show");
+    messageElement.classList.add("hide");
+  }, 12000);
+
+  window.onscroll = function() {
+    var scroll = document.documentElement.scrollTop;
+
+    if (scroll > 100) {
+      messageElement.classList.remove("show");
+      messageElement.classList.add("hide");
+    } else {
+      messageElement.classList.remove("hide");
+      messageElement.classList.add("show");
+    }
   }
-}
+});
