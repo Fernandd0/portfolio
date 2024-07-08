@@ -136,7 +136,6 @@ window.addEventListener('load', function(){
 
 // Scroll to top selection
 const scrollUp = document.querySelector("#scroll-up");
-// scroll to top functionality
 scrollUp.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
@@ -145,7 +144,7 @@ scrollUp.addEventListener("click", () => {
   });
 });
 
-buttonUp = document.getElementById("scroll-up");
+const buttonUp = document.getElementById("scroll-up");
 
 // Message: update
 document.addEventListener("DOMContentLoaded", function() {
@@ -166,9 +165,11 @@ document.addEventListener("DOMContentLoaded", function() {
     if (scroll > 100) {
       messageElement.classList.remove("show");
       messageElement.classList.add("hide");
+      buttonUp.style.transform = "scale(1)";
     } else {
       messageElement.classList.remove("hide");
       messageElement.classList.add("show");
+      buttonUp.style.transform = "scale(0)";
     }
   }
 });

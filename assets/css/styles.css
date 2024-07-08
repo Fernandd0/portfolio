@@ -240,8 +240,12 @@ html body {
   visibility: hidden;
   padding-top: 100px;
 }
-
 /*AboutMe*/
+.c-btn-portada {
+  display: flex;
+  align-items: start;
+  gap: 0.5em;
+}
 .about-me {
   padding: 1.5em;
 
@@ -814,5 +818,8 @@ footer {
   }
   .c-message {
     font-size: 0.5em;
+  }
+  .c-btn-portada {
+    flex-direction: column;
   }
 }
