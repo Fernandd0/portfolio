@@ -788,6 +788,9 @@ footer {
   .img-warning {
     display: none;
   }
+  .project-icons {
+    margin-top: 0.5em;
+  }
 }
 
 /*Responsive <480*/
@@ -821,5 +824,8 @@ footer {
   }
   .c-btn-portada {
     flex-direction: column;
+  }
+  .project-icons {
+    margin-top: 0em;
   }
 }
