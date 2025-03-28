@@ -43,7 +43,7 @@ html body {
   padding: 2em 9em 0 9em;
 }
 
-/*Update*/
+/*message*/
 .c-message {
   position: fixed;
   bottom: 1em;
@@ -67,12 +67,8 @@ html body {
 .nes-balloon {
   margin-left: 0.5em;
   font-size: 1em;
+  color: #090e16;
 }
-
-.img-warning {
-  margin-left: 0.5em;
-}
-
 /*Navbar*/
 .header {
   font-family: var(--font-family-1);
