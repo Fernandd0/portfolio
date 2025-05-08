@@ -1,6 +1,7 @@
 ---
 import Analytics from "@vercel/analytics/astro";
-import "../styles/globals.css";
+import "../styles/global.css";
+import "nes.css/css/nes.min.css";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 ---
@@ -21,20 +22,6 @@ import { Footer } from "./Footer";
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=IBM+Plex+Mono:wght@400;700&family=Rubik:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Framework NES.css -->
-    <link
-      href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/nes.css@latest/css/nes.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    />
     <Analytics />
   </head>
   <body>
@@ -42,6 +29,25 @@ import { Footer } from "./Footer";
     <main>
       <slot />
     </main>
+    <!--Social Networks-->
+    <div class="icon-list">
+      <!-- linkedin -->
+      <a href="https://www.linkedin.com/in/fernanddo-dev/" target="_blank">
+        <i class="nes-icon is-medium-custom linkedin"></i>
+      </a>
+      <!-- github -->
+      <a href="https://github.com/Fernandd0" target="_blank">
+        <i class="nes-icon is-medium-custom github"></i>
+      </a>
+      <!-- twitter -->
+      <a href="https://twitter.com/Fernandddd0" target="_blank">
+        <i class="nes-icon is-medium-custom twitter"></i>
+      </a>
+      <!-- gmail -->
+      <a href="mailto:fernando.sc.contacto@gmail.com" target="_blank">
+        <i class="nes-icon is-medium-custom gmail"></i>
+      </a>
+    </div>
     <Footer client:load />
   </body>
 </html>

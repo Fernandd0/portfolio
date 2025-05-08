@@ -2,7 +2,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer>
-      <div className="c-footer-text">
+      <div className="c_container c-footer-text">
         <p className="footer-text-1">&copy; Copyright {currentYear}</p>
         <p className="footer-text-2">
           Hecho con <i className="nes-icon is-small heart"></i> por

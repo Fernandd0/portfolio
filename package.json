@@ -12,6 +12,7 @@
     "@astrojs/react": "^4.2.2",
     "@vercel/analytics": "^1.5.0",
     "astro": "^5.5.5",
+    "nes.css": "^2.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

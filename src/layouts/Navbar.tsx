@@ -14,12 +14,12 @@ export const Navbar = () => {
   }, [isDarkMode]);
 
   return (
-    <>
+    <div className="c_container c-header">
       <header className="header">
         <nav id="nav" className="nav">
           <div className="c-logo">
             <li>
-              <a href="#" className="logo">
+              <a href="/" className="logo">
                 {">"}efe
               </a>
             </li>
@@ -91,29 +91,6 @@ export const Navbar = () => {
           </button>
         </nav>
       </header>
-
-      <div className="c-toggle-mood">
-        <label
-          htmlFor="toggle"
-          id="label_toggle"
-          className="label-toggle"
-          onClick={() => setIsDarkMode(!isDarkMode)}
-        >
-          <img
-            src={isDarkMode ? icoSun.src : icoMoon.src}
-            alt={isDarkMode ? "sun mood" : "dark mood"}
-            className="ico-mood ico-mood-moon"
-            width="30"
-            height="30"
-          />
-        </label>
-        <input
-          type="checkbox"
-          id="toggle"
-          checked={isDarkMode}
-          onChange={() => setIsDarkMode(!isDarkMode)}
-        />
-      </div>
-    </>
+    </div>
   );
 };
