@@ -1,192 +1,110 @@
-<div id="about" class="hidden-div"></div>
-<section class="about-me c_container">
-  <div class="about-c">
-    <div class="c-bio-title">
-      <h2 class="bio-title">Sobre mi</h2>
-    </div>
-    <div class="bio">
-      <div class="c-bio-img">
-        <img
-          src="assets/img/me-1.png"
-          alt="me"
-          class="bio-img"
-          width="100"
-          height="100"
-        />
-      </div>
-      <div class="c-bio-text">
-        <p class="bio-text">
-          Soy desarrollador de software freelance, con una pasión por el
-          aprendizaje continuo y los desafíos tecnológicos.
-        </p>
-        <p class="bio-text">
-          Estoy disponible para ayudarte a llevar tus ideas al siguiente nivel
-          con soluciones tecnológicas innovadoras y efectivas.
-        </p>
-        <p class="bio-text">
-          <b>Si puedes imaginarlo, puedo programarlo.</b>
-        </p>
+<div id="about" class="p-div c_container">
+  <section class="about-me">
+    <div class="about-c">
+      <div class="c-bio-title">
+        <h2 class="bio-title">Sobre mi</h2>
       </div>
     </div>
-  </div>
-  <!-- More About Me-->
-  <div class="c-hide-text" id="more_text">
-    <span class="hide-text">
-      <p>
-        Estoy aquí para convertir tus ideas en realidad,
-        <b
-          >proporcionando servicios de desarrollo a medida que impulsan el
-          crecimiento y la eficiencia de tu negocio</b
-        >. Ya sea que necesites una aplicación web, un sistema personalizado o
-        una consultoría tecnológica, puedo ayudarte a alcanzar tus objetivos con
-        profesionalismo y dedicación.
-      </p>
-      <p>
-        <a href="#contact"><b>¡Hablemos y hagamos realidad tu proyecto!</b></a>
-      </p>
-      <p>
-        En mi tiempo libre, disfruto practicar deportes como el baloncesto y el
-        fútbol. He notado que tanto en el deporte como en la programación es
-        esencial tener una planificación clara antes de comenzar. En los
-        deportes, esto significa establecer una estrategia y un plan de juego,
-        mientras que en la programación implica definir los requisitos del
-        proyecto y establecer una arquitectura y diseño del software adecuados.
-      </p>
-      <ul class="nes-list is-circle hide-list">
-        <li class="hide-list-item">
-          📝 Soy estudiante o tal vez lo fui, pero estoy constantemente
-          aprendiendo y adaptándome a nuevas tecnologías para ofrecerte las
-          soluciones más avanzadas y eficientes.
-        </li>
-        <li class="hide-list-item">
-          📜 Escribo poemas para despejar mi mente y liberar mi creatividad, lo
-          que me permite abordar los problemas desde perspectivas únicas.
-        </li>
-        <li class="hide-list-item">
-          🌱 Actualmente, estoy profundizando mis conocimientos en machine
-          learning, lo que abre nuevas posibilidades para proyectos con
-          Inteligencia Artificial.
-        </li>
-      </ul>
-    </span>
-  </div>
-  <div class="btn-hero-c">
-    <button type="button" class="nes-btn btn_text" id="btn_text">
-      Más sobre mi
-    </button>
-  </div>
-</section>
+
+    <section>
+      <button
+        type="button"
+        class="nes-btn is-warning"
+        onclick="document.getElementById('dialog-rounded').showModal();"
+      >
+        Sobre mi
+      </button>
+      <dialog class="nes-dialog is-rounded" id="dialog-rounded">
+        <form method="dialog">
+          <div class="bio">
+            <div class="c-bio-img">
+              <img
+                src="assets/img/me-1.png"
+                alt="me"
+                class="bio-img"
+                width="100"
+                height="100"
+              />
+            </div>
+            <div class="c-bio-text">
+              <p class="bio-text">
+                Soy desarrollador de software freelance, con una pasión por el
+                aprendizaje continuo y los desafíos tecnológicos.
+              </p>
+              <p class="bio-text">
+                Estoy disponible para ayudarte a llevar tus ideas al siguiente
+                nivel con soluciones tecnológicas innovadoras y efectivas.
+              </p>
+              <p class="bio-text">
+                <b>Si puedes imaginarlo, puedo programarlo.</b>
+              </p>
+            </div>
+          </div>
+          <!-- More About Me-->
+          <div class="c-hide-text">
+            <span class="-text">
+              <p>
+                Estoy aquí para convertir tus ideas en realidad,
+                <b
+                  >proporcionando servicios de desarrollo a medida que impulsan
+                  el crecimiento y la eficiencia de tu negocio</b
+                >. Ya sea que necesites una aplicación web, un sistema
+                personalizado o una consultoría tecnológica, puedo ayudarte a
+                alcanzar tus objetivos con profesionalismo y dedicación.
+              </p>
+              <p>
+                <a href="#contact"
+                  ><b>¡Hablemos y hagamos realidad tu proyecto!</b></a
+                >
+              </p>
+              <p>
+                En mi tiempo libre, disfruto practicar deportes como el
+                baloncesto y el fútbol. He notado que tanto en el deporte como
+                en la programación es esencial tener una planificación clara
+                antes de comenzar. En los deportes, esto significa establecer
+                una estrategia y un plan de juego, mientras que en la
+                programación implica definir los requisitos del proyecto y
+                establecer una arquitectura y diseño del software adecuados.
+              </p>
+              <ul class="nes-list is-circle hide-list">
+                <li class="hide-list-item">
+                  📝 Soy estudiante o tal vez lo fui, pero estoy constantemente
+                  aprendiendo y adaptándome a nuevas tecnologías para ofrecerte
+                  las soluciones más avanzadas y eficientes.
+                </li>
+                <li class="hide-list-item">
+                  📜 Escribo poemas para despejar mi mente y liberar mi
+                  creatividad, lo que me permite abordar los problemas desde
+                  perspectivas únicas.
+                </li>
+                <li class="hide-list-item">
+                  🌱 Actualmente, estoy profundizando mis conocimientos en
+                  machine learning, lo que abre nuevas posibilidades para
+                  proyectos con Inteligencia Artificial.
+                </li>
+              </ul>
+            </span>
+          </div>
+          <menu class="dialog-menu">
+            <button class="nes-btn">Cerrar</button>
+          </menu>
+        </form>
+      </dialog>
+    </section>
+  </section>
+</div>
+
 <!-- Skills section -->
-<div id="skills" class="hidden-div"></div>
-<section class="skills-section c_container">
-  <div class="skill-title-c">
-    <h2 class="skill-title">Habilidades</h2>
-  </div>
-
-  <div class="skills-wrapper">
-    <div class="cards-row">
-      <img
-        src="assets/ico/ico-typescript.svg"
-        title="Typescript"
-        alt="Typescript"
-        width="48"
-        height="48"
-        loading="lazy"
-        class="icon-card"
-      />
-      <img
-        src="assets/ico/ico-javascript.svg"
-        title="Javascript"
-        alt="Javascript"
-        loading="lazy"
-        class="icon-card"
-        width="48"
-        height="48"
-      />
-      <img
-        src="assets/ico/ico-react.svg"
-        alt="REACT"
-        loading="lazy"
-        class="icon-card"
-        width="48"
-        height="48"
-      />
-      <img
-        src="assets/ico/ico-vue.svg"
-        alt="VUEJS"
-        loading="lazy"
-        class="icon-card"
-        width="48"
-        height="48"
-      />
-      <img
-        src="assets/ico/ico-mongodb.svg"
-        alt="MONGODB"
-        loading="lazy"
-        class="icon-card"
-        width="48"
-        height="48"
-      />
-      <img
-        src="assets/ico/ico-mysql.svg"
-        alt="MySQL"
-        loading="lazy"
-        class="icon-card"
-        width="48"
-        height="48"
-      />
-      <img
-        src="assets/ico/ico-php.svg"
-        alt="PHP"
-        loading="lazy"
-        class="icon-card"
-        width="48"
-        height="48"
-      />
-      <img
-        src="assets/ico/ico-laravel.svg"
-        alt="LARAVEL"
-        loading="lazy"
-        class="icon-card"
-        width="48"
-        height="48"
-      />
-      <img
-        src="assets/ico/ico-html.svg"
-        alt="HTML"
-        loading="lazy"
-        class="icon-card"
-        width="48"
-        height="48"
-      />
-      <img
-        src="assets/ico/ico-css.svg"
-        alt="CSS"
-        loading="lazy"
-        class="icon-card"
-        width="48"
-        height="48"
-      />
-      <img
-        src="assets/ico/ico-tailwind.svg"
-        alt="TAILWIND"
-        loading="lazy"
-        class="icon-card"
-        width="48"
-        height="48"
-      />
-
-      <img
-        src="assets/ico/ico-git.svg"
-        alt="GIT"
-        loading="lazy"
-        class="icon-card"
-        width="48"
-        height="48"
-      />
-      <!-- <img src="assets/ico/ico-java.svg" alt="Java" loading="lazy" class="icon-card" width="48" height="48" />
-        <img src="assets/ico/ico-python.svg" alt="Python" loading="lazy" class="icon-card" width="48" height="48" />
-        <img src="assets/ico/ico-csharp.svg" alt="Python" loading="lazy" class="icon-card" width="48" height="48" /> -->
-    </div>
-  </div>
-</section>
+<div id="skills" class="p-div c_container">
+  <section class="skills-section">
+    <img
+      src="https://skillicons.dev/icons?i=ts,js,react,vue,astro,html,css,tailwind,nodejs,java,mysql,postgres,git"
+      title="Skills"
+      alt="Skills"
+      width="36"
+      height="36"
+      loading="lazy"
+      class="icon-card"
+    />
+  </section>
+</div>

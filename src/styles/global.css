@@ -170,8 +170,8 @@ html body {
 }
 
 /*Portada*/
-.portada {
-  padding: 0 3em;
+.p-custom {
+  padding: 0 3em !important;
 }
 
 .div-portada-all {
@@ -219,12 +219,10 @@ html body {
   display: block;
 }
 
-.hidden-div {
-  visibility: hidden;
-  padding-top: 100px;
-}
-
 /*AboutMe*/
+.p-div {
+  padding: 100px 3em 0 3em;
+}
 .c-btn-portada {
   display: flex;
   align-items: start;
@@ -298,10 +296,8 @@ html body {
 }
 
 .c-hide-text {
-  display: none;
 }
 .c-show-text {
-  display: block;
 }
 
 /*Projects*/
@@ -511,44 +507,19 @@ html body {
   border-image-source: var(--border-img);
   border-image-outset: 2;
 }
-.skill-title-c {
-  text-align: left;
-  display: table;
-}
-.skill-title {
-  color: var(--secondary-color);
-  font-size: var(--bold-font);
-  background-color: var(--primary-color);
-  padding: 0 1em;
-  margin: -2em 0 0 0;
-  font-size: var(--bold-font);
-  top: 0;
-}
-.skills-wrapper img {
-  width: 5em;
-}
 .icon-card {
   width: 100%;
-  height: auto;
-  margin: 1em 0.5em 1em 0.5em;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-
-  border: 0.2em solid var(--third-color);
-  border-image-slice: 3;
-  border-image-width: 3;
-  border-image-source: var(--border-img-3);
-  border-image-outset: 3;
+  height: 96px;
 }
-.icon-card:hover {
-  border-image-source: var(--border-img-2);
-  transform: scale(1.1);
+.icon-card-2 {
+  width: 100%;
+  height: 96px;
+  margin-top: 2em;
 }
 
 /*Contact*/
 .contact-section {
   width: 100%;
-  margin-bottom: 8em;
   padding: 1em 2em;
 
   border: 0.3em solid var(--third-color);
@@ -565,7 +536,7 @@ html body {
   color: var(--sixth-color);
   font-family: var(--font-family-2);
   font-size: var(--normal-font);
-  font-weight: 600;
+  font-weight: 500;
 }
 .contact-title {
   color: var(--secondary-color);
@@ -574,6 +545,9 @@ html body {
   padding: 0 1em;
   margin: -2em 0 0 0;
   top: 0;
+}
+.input-half {
+  width: 50%;
 }
 .form-control label {
   color: var(--secondary-color);
@@ -589,6 +563,19 @@ html body {
   border-image-width: 3;
   border-image-source: var(--border-img);
   border-image-outset: 2;
+}
+.c-inputs {
+  padding-top: 2em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+}
+.c-submit-btn {
+  width: 100%;
+  display: flex;
+  justify-content: end;
 }
 /*
 .form-control .input-field::placeholder{
@@ -833,8 +820,12 @@ footer {
     max-width: 1040px;
   }
 }
-
 @media (min-width: 1400px) {
+  .c_container {
+    max-width: 1240px;
+  }
+}
+@media (min-width: 1500px) {
   .c_container {
     max-width: 1340px;
   }
