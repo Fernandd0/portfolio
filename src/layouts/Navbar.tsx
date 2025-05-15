@@ -54,28 +54,6 @@ export const Navbar = () => {
                 CV
               </a>
             </li>
-            <li className="c-toggle-mood-2">
-              <label
-                htmlFor="toggle-2"
-                id="label_toggle-2"
-                className="label-toggle-2"
-                onClick={() => setIsDarkMode(!isDarkMode)}
-              >
-                <img
-                  src={isDarkMode ? icoSun.src : icoMoon.src}
-                  alt={isDarkMode ? "sun mood" : "dark mood"}
-                  className="ico-mood"
-                  width="30"
-                  height="30"
-                />
-              </label>
-              <input
-                type="checkbox"
-                id="toggle-2"
-                checked={isDarkMode}
-                onChange={() => setIsDarkMode(!isDarkMode)}
-              />
-            </li>
           </ul>
           <button
             className="nav-toggle"

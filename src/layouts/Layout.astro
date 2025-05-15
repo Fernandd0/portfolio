@@ -1,9 +1,11 @@
 ---
-import Analytics from "@vercel/analytics/astro";
-import "../styles/global.css";
 import "nes.css/css/nes.min.css";
+import "../styles/global.css";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import { SocialNetworks } from "./components/SocialNetworks";
+import { BtnScrollTop } from "./components/BtnScrollTop";
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <!doctype html>
@@ -29,25 +31,8 @@ import { Footer } from "./Footer";
     <main>
       <slot />
     </main>
-    <!--Social Networks-->
-    <div class="icon-list">
-      <!-- linkedin -->
-      <a href="https://www.linkedin.com/in/fernanddo-dev/" target="_blank">
-        <i class="nes-icon is-medium-custom linkedin"></i>
-      </a>
-      <!-- github -->
-      <a href="https://github.com/Fernandd0" target="_blank">
-        <i class="nes-icon is-medium-custom github"></i>
-      </a>
-      <!-- twitter -->
-      <a href="https://twitter.com/Fernandddd0" target="_blank">
-        <i class="nes-icon is-medium-custom twitter"></i>
-      </a>
-      <!-- gmail -->
-      <a href="mailto:fernando.sc.contacto@gmail.com" target="_blank">
-        <i class="nes-icon is-medium-custom gmail"></i>
-      </a>
-    </div>
+    <SocialNetworks />
+    <BtnScrollTop client:load />
     <Footer client:load />
   </body>
 </html>
