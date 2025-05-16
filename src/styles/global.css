@@ -199,7 +199,7 @@ nav ul.show {
 }
 .div-portada-all {
   min-height: max-content;
-  height: 80dvh;
+  padding: 3em 0 0 0;
   width: 100%;
   display: flex;
   gap: 2em;
@@ -569,7 +569,7 @@ nav ul.show {
   top: 0;
 }
 .input-half {
-  width: 50%;
+  width: 100%;
 }
 .form-control label {
   color: var(--secondary-color);
@@ -591,8 +591,8 @@ nav ul.show {
   width: 100%;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 2em;
 }
 .c-submit-btn {
   width: 100%;
@@ -689,6 +689,7 @@ footer {
     flex-direction: row;
   }
   .div-portada-all {
+    padding: 8em 0;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -732,9 +733,19 @@ footer {
     padding: 1em 1.5em;
     border-left: 0.2em solid var(--third-color);
   }
+  .input-half {
+    width: 50%;
+  }
+  .c-inputs {
+    gap: 1em;
+    flex-direction: row;
+  }
 }
 
 @media screen and (width >= 1200px) {
+  .c-inputs {
+    gap: 2em;
+  }
   .p-custom {
     padding: 0 5em;
   }
