@@ -1,6 +1,4 @@
-import icoMoon from "./ico/ico-moon.webp";
-import icoSun from "./ico/ico-sun.webp";
 import icoBurger from "./ico/ico-burger.svg";
-import hero from "./img/me-hero.png";
+import hero from "./img/me-hero.webp";
 
-export { icoMoon, icoSun, icoBurger, hero };
+export { icoBurger, hero };

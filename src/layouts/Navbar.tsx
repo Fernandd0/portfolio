@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { icoMoon, icoSun, icoBurger } from "../assets";
+import { icoBurger } from "../assets";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
