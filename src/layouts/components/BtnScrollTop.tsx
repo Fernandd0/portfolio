@@ -31,7 +31,7 @@ export const BtnScrollTop = () => {
       id="scroll-up"
       onClick={scrollToTop}
     >
-      <button type="button" className="nes-btn is-primary scroll">
+      <button type="button" className="nes-btn is- scroll">
         <span>&lt;</span>
       </button>
     </div>

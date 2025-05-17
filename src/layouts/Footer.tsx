@@ -5,7 +5,7 @@ export const Footer = () => {
       <div className="c_container c-footer-text">
         <p className="footer-text-1">&copy; Copyright {currentYear}</p>
         <p className="footer-text-2">
-          Hecho con <i className="nes-icon is-small heart"></i> por
+          By{" "}
           <a
             href="https://github.com/Fernandd0"
             target="_blank"
