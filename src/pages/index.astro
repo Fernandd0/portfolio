@@ -4,11 +4,15 @@ import HeroSection from "./_components/HeroSection.astro";
 import AboutSection from "./_components/AboutSection.astro";
 import PortfolioSection from "./_components/PortfolioSection.astro";
 import ContactSection from "./_components/ContactSection.astro";
+import SkillsSection from "./_components/SkillsSection.astro";
+import { Cat } from "../components/cat";
 ---
 
 <Layout>
   <HeroSection />
   <!-- <AboutSection /> -->
-  <!-- <PortfolioSection /> -->
+  <!-- <SkillsSection /> -->
+  <PortfolioSection />
   <ContactSection />
+  <Cat client:load />
 </Layout>
