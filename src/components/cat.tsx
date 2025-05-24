@@ -1,7 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./styles/cat.module.css";
 
 export const Cat = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   const catWrapperRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const catRef = useRef<HTMLDivElement>(null);
@@ -9,6 +11,24 @@ export const Cat = () => {
   const legsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
+    const handleFirstClick = () => {
+      setIsVisible(true);
+      document.removeEventListener("click", handleFirstClick);
+      document.removeEventListener("touchstart", handleFirstClick);
+    };
+
+    document.addEventListener("click", handleFirstClick);
+    document.addEventListener("touchstart", handleFirstClick);
+
+    return () => {
+      document.removeEventListener("click", handleFirstClick);
+      document.removeEventListener("touchstart", handleFirstClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
     const catWrapper = catWrapperRef.current;
     const wrapper = wrapperRef.current;
     const cat = catRef.current;
@@ -85,14 +105,14 @@ export const Cat = () => {
       }
     };
 
-    setInterval(() => {
+    const positionInterval = setInterval(() => {
       if (!pos.x || !pos.y) return;
       decideTurnDirection();
       headMotion();
       decideStop();
     }, 100);
 
-    setInterval(() => {
+    const jumpInterval = setInterval(() => {
       if (!pos.x || !pos.y) return;
       jump();
     }, 1000);
@@ -100,12 +120,15 @@ export const Cat = () => {
     document.addEventListener("mousemove", handleMouseMotion);
     document.addEventListener("touchmove", handleTouchMotion);
 
-
     return () => {
+      clearInterval(positionInterval);
+      clearInterval(jumpInterval);
       document.removeEventListener("mousemove", handleMouseMotion);
       document.removeEventListener("touchmove", handleTouchMotion);
     };
-  }, []);
+  }, [isVisible]);
+
+  if (!isVisible) return null;
 
   return (
     <div className={styles.outer_wrapper}>
