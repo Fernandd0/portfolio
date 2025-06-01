@@ -1,18 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
-import projectsData from "../data/projects.json";
+import projectsData from "../../data/projects.json";
+import type { Project } from "../../types/Project";
 
 gsap.registerPlugin(Draggable);
-
-type Project = {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-  githubUrl?: string;
-  webUrl?: string;
-};
 
 const projects: Project[] = projectsData;
 

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import styles from "./styles/cat.module.css";
+import styles from "../styles/cat.module.css";
 
 export const Cat = () => {
   const [isVisible, setIsVisible] = useState(false);
