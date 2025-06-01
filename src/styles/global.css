@@ -321,7 +321,7 @@ nav ul.show {
 .projects {
   width: 100%;
   text-align: center;
-  padding: 3em 1em;
+  padding: 3em 1.5em;
 
   border: 0.3em solid var(--third-color);
   border-image-slice: 2;
@@ -360,8 +360,7 @@ nav ul.show {
 }
 
 .slider-wrapper {
-  max-width: 1024px;
-  margin: 1rem auto;
+  margin: 1.5rem 0 0.5rem 0;
   position: relative;
   user-select: none;
   overflow: hidden;
@@ -377,7 +376,6 @@ nav ul.show {
 .slide-card {
   flex: 0 0 320px;
   background: #fff;
-  border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -391,11 +389,6 @@ nav ul.show {
 .slide-img {
   width: 100%;
   height: 180px;
-  object-fit: cover;
-  pointer-events: none;
-  user-select: none;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
 }
 
 .slide-content {
@@ -429,7 +422,7 @@ nav ul.show {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 10px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
@@ -462,9 +455,7 @@ nav ul.show {
 
 .overlay-btn {
   background: transparent;
-  border: 2px solid rgba(0, 0, 0, 0.3);
   padding: 8px;
-  border-radius: 50%;
   width: 38px;
   height: 38px;
   cursor: pointer;
@@ -479,12 +470,12 @@ nav ul.show {
 .overlay-btn:hover {
   background-color: rgba(0, 0, 0, 0.1);
   color: #000;
+  cursor: pointer;
 }
 
-.overlay-btn svg {
-  width: 20px;
-  height: 20px;
+.overlay-btn img {
   fill: currentColor;
+  cursor: pointer;
 }
 
 .dots-container {
@@ -498,7 +489,6 @@ nav ul.show {
 .dot {
   width: 10px;
   height: 10px;
-  border-radius: 10%;
   background-color: #cbd5e1;
   cursor: pointer;
   transition: background-color 0.3s ease;

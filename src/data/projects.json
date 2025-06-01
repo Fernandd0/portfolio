@@ -1,50 +1,31 @@
 [
   {
     "id": 1,
-    "title": "Pixel Art Maker",
-    "description": "",
-    "imageUrl": "",
-    "githubUrl": "",
-    "webUrl": ""
+    "title": "Eiich",
+    "description": "Plataforma web donde se realizan sorteos y suscripciones mensuales.",
+    "imageUrl": "projectEiich",
+    "webUrl": "https://eiich.com"
   },
   {
     "id": 2,
-    "title": "Speak Like",
-    "description": "",
-    "imageUrl": "",
-    "githubUrl": "",
-    "webUrl": ""
+    "title": "Eiich Empresas",
+    "description": "Plataforma Web para prestar servicios por membresia.",
+    "imageUrl": "projectEiichEmpresas",
+    "webUrl": "https://eiichempresas.com"
   },
   {
     "id": 3,
-    "title": "Zeytol",
-    "description": "",
-    "imageUrl": "",
+    "title": "BNFILMS",
+    "description": "Pagina web informativa de la empresa.",
+    "imageUrl": "loading",
     "githubUrl": "",
     "webUrl": ""
   },
   {
     "id": 4,
-    "title": "Eiich",
-    "description": "",
-    "imageUrl": "",
-    "githubUrl": "",
-    "webUrl": ""
-  },
-  {
-    "id": 5,
-    "title": "Eiich Empresas",
-    "description": "",
-    "imageUrl": "",
-    "githubUrl": "",
-    "webUrl": ""
-  },
-  {
-    "id": 6,
-    "title": "BNFILMS",
-    "description": "",
-    "imageUrl": "",
-    "githubUrl": "",
-    "webUrl": ""
+    "title": "Nerd Agencia Digital",
+    "description": "Pagina web informativa de la empresa.",
+    "imageUrl": "projectNerd",
+    "webUrl": "https://nerd.pe/"
   }
 ]

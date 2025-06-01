@@ -3,10 +3,30 @@ import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 import projectsData from "../../data/projects.json";
 import type { Project } from "../../types/Project";
+import {
+  loading,
+  projectEiich,
+  projectEiichEmpresas,
+  projectNerd,
+  icoGithub,
+  icoWeb,
+} from "../../assets";
 
 gsap.registerPlugin(Draggable);
 
-const projects: Project[] = projectsData;
+const imageMap: Record<string, string> = {
+  loading: loading.src || "",
+  projectEiich: projectEiich.src || "",
+  projectEiichEmpresas: projectEiichEmpresas.src || "",
+  projectNerd: projectNerd.src || "",
+};
+
+const projects: Project[] = projectsData
+  .map((project) => ({
+    ...project,
+    imageUrl: project.imageUrl ? imageMap[project.imageUrl] || "" : "",
+  }))
+  .reverse();
 
 const CARD_WIDTH = 320;
 const CARD_GAP = 24;
@@ -135,7 +155,6 @@ export const PortfolioSlider: React.FC = () => {
               />
               <div className="slide-content">
                 <h3 className="slide-title">{title}</h3>
-                <p className="slide-desc">{description}</p>
               </div>
 
               <div
@@ -143,7 +162,6 @@ export const PortfolioSlider: React.FC = () => {
                 ref={(el) => void (overlaysRef.current[idx] = el)}
                 aria-hidden="true"
               >
-                <h3>{title}</h3>
                 <p>{description}</p>
                 <div className="overlay-btns">
                   {githubUrl && (
@@ -154,13 +172,12 @@ export const PortfolioSlider: React.FC = () => {
                       className="overlay-btn"
                       aria-label={`Repositorio GitHub de ${title}`}
                     >
-                      <svg
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.084-.729.084-.729 1.205.084 1.838 1.235 1.838 1.235 1.07 1.835 2.809 1.305 3.495.997.108-.776.418-1.305.76-1.605-2.665-.3-5.466-1.335-5.466-5.933 0-1.31.47-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.403c1.02.005 2.045.137 3.003.403 2.29-1.552 3.296-1.23 3.296-1.23.653 1.653.243 2.873.12 3.176.77.84 1.236 1.91 1.236 3.22 0 4.61-2.804 5.63-5.475 5.922.43.372.823 1.103.823 2.222v3.293c0 .321.217.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                      </svg>
+                      <img
+                        src={icoGithub.src}
+                        alt="GitHub"
+                        width="24"
+                        height="24"
+                      />
                     </a>
                   )}
                   {webUrl && (
@@ -171,13 +188,7 @@ export const PortfolioSlider: React.FC = () => {
                       className="overlay-btn"
                       aria-label={`Sitio web de ${title}`}
                     >
-                      <svg
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M10.59 13.41a2 2 0 002.83 0l3.54-3.54a2 2 0 10-2.83-2.83l-1.12 1.12 1.41 1.41-2.12 2.12-1.41-1.41-1.12 1.12zm7.07-5.66l-3.54 3.54a4 4 0 01-5.66 0l-3.54-3.54a4 4 0 115.66-5.66l1.12 1.12a1 1 0 01-1.41 1.41l-1.12-1.12a2 2 0 10-2.83 2.83l3.54 3.54a2 2 0 002.83 0l1.12-1.12a1 1 0 011.41 1.41l-1.12 1.12z" />
-                      </svg>
+                      <img src={icoWeb.src} alt="Web" width="24" height="24" />
                     </a>
                   )}
                 </div>
