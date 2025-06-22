@@ -516,6 +516,44 @@ nav ul.show {
   height: 100px;
 }
 
+.icon_skill_div {
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding-block: 3rem;
+}
+
+.icon_skill_div .medias {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1vw;
+}
+
+.icon_skill_div .media img {
+  width: 11vw;
+  height: 11vw;
+  object-fit: contain;
+  border-radius: 8%;
+  display: block;
+  pointer-events: none;
+  will-change: transform;
+  background: transparent;
+  padding: 6px;
+  transition: transform 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .icon_skill_div .medias {
+    gap: 2vw;
+  }
+
+  .icon_skill_div .media img {
+    width: 18vw;
+    height: 18vw;
+  }
+}
+
 /*Contact*/
 .contact-section {
   width: 100%;
