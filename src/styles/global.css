@@ -521,7 +521,7 @@ nav ul.show {
   position: relative;
   display: grid;
   place-items: center;
-  padding-block: 3rem;
+  padding: 1rem;
 }
 
 .icon_skill_div .medias {
@@ -531,8 +531,8 @@ nav ul.show {
 }
 
 .icon_skill_div .media img {
-  width: 11vw;
-  height: 11vw;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
   border-radius: 8%;
   display: block;
@@ -541,17 +541,6 @@ nav ul.show {
   background: transparent;
   padding: 6px;
   transition: transform 0.2s ease;
-}
-
-@media (max-width: 768px) {
-  .icon_skill_div .medias {
-    gap: 2vw;
-  }
-
-  .icon_skill_div .media img {
-    width: 18vw;
-    height: 18vw;
-  }
 }
 
 /*Contact*/

@@ -52,8 +52,8 @@ export default function SkillsGallery() {
         tl.timeScale(1.2);
         tl.to(img, {
           inertia: {
-            x: { velocity: delta.current.x * 280, end: 0 },
-            y: { velocity: delta.current.y * 280, end: 0 },
+            x: { velocity: delta.current.x * 80, end: 0 },
+            y: { velocity: delta.current.y * 80, end: 0 },
           },
         });
         tl.fromTo(
