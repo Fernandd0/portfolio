@@ -9,6 +9,7 @@ import loading from "./img/loading.webp";
 import projectEiich from "./img/project-eiich.webp";
 import projectEiichEmpresas from "./img/project-eiichEmpresas.webp";
 import projectNerd from "./img/project-nerd.webp";
+import projectZeytol from "./img/project-zeytol.webp";
 
 export {
   icoBurger,
@@ -22,4 +23,5 @@ export {
   projectEiich,
   projectEiichEmpresas,
   projectNerd,
+  projectZeytol
 };

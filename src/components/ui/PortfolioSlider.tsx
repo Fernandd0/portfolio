@@ -8,6 +8,7 @@ import {
   projectEiich,
   projectEiichEmpresas,
   projectNerd,
+  projectZeytol,
   icoGithub,
   icoWeb,
 } from "../../assets";
@@ -19,6 +20,7 @@ const imageMap: Record<string, string> = {
   projectEiich: projectEiich.src || "",
   projectEiichEmpresas: projectEiichEmpresas.src || "",
   projectNerd: projectNerd.src || "",
+  projectZeytol: projectZeytol.src
 };
 
 const projects: Project[] = projectsData
