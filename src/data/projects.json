@@ -34,5 +34,19 @@
     "description": "Pagina web informativa de la empresa.",
     "imageUrl": "projectNerd",
     "webUrl": "https://nerd.pe/"
+  },
+  {
+    "id": 6,
+    "title": "Bulle Agency",
+    "description": "Pagina web informativa de la agencia digital.",
+    "imageUrl": "projectNerd",
+    "webUrl": "https://bulle-agency.vercel.app/"
+  },
+  {
+    "id": 7,
+    "title": "Pawner",
+    "description": "Landing page de la empresa de alimentos para mascotas.",
+    "imageUrl": "projectNerd",
+    "webUrl": "https://pawner.nerdstudiolab.com/"
   }
 ]

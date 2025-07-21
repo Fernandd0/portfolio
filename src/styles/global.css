@@ -185,6 +185,7 @@ nav ul.show {
   padding: 60px 1em 0 1em;
 }
 .div-portada-all {
+  margin-top: 1em;
   padding: 1em 0;
   min-height: max-content;
   height: 80dvh;
@@ -311,11 +312,6 @@ nav ul.show {
   font-size: var(--normal-font);
 }
 
-.c-hide-text {
-}
-.c-show-text {
-}
-
 /*Projects*/
 .projects {
   width: 100%;
@@ -358,145 +354,126 @@ nav ul.show {
   top: 0;
 }
 
-.slider-wrapper {
-  margin: 1.5rem 0 0.5rem 0;
-  position: relative;
-  user-select: none;
-  overflow: hidden;
+.pixel-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
 }
 
-.slider-track {
-  display: flex;
-  gap: 20px;
-  cursor: grab;
-  will-change: transform;
-}
-
-.slide-card {
-  flex: 0 0 320px;
-  background: #fff;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
-  outline: none;
-  padding: 0 !important;
-  transform-origin: center center;
-}
-
-.slide-img {
-  width: 100%;
-  height: 180px;
-}
-
-.slide-content {
-  padding: 1rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.slide-title {
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 0.2rem;
-  color: #222;
-}
-
-.slide-desc {
-  font-size: 0.8rem;
-  color: #555;
-  flex-grow: 1;
-}
-
-.slide-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #000;
-  padding: 1.5rem 1.5rem 3rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 10px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  pointer-events: none;
-  user-select: none;
-  will-change: opacity, transform;
-  box-sizing: border-box;
-  text-align: center;
-  transition: none !important;
-}
-
-.slide-overlay h3 {
-  margin: 0 0 0.6rem 0;
-  font-size: 1.3rem;
-  font-weight: 700;
-  line-height: 1.1;
-}
-
-.slide-overlay p {
-  margin: 0 0 1.5rem 0;
-  font-size: 1rem;
-  line-height: 1.3;
-}
-
-.overlay-btns {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.overlay-btn {
-  background: transparent;
-  padding: 8px;
-  width: 38px;
-  height: 38px;
+.pixel-card {
+  background-color: #1a1a1a;
+  border: 4px solid #c0c0c0;
+  border-radius: 6px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(0, 0, 0, 0.7);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
-}
-
-.overlay-btn:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #000;
-  cursor: pointer;
-}
-
-.overlay-btn img {
-  fill: currentColor;
-  cursor: pointer;
-}
-
-.dots-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 1.5rem;
   padding: 0.5rem;
+  width: 250px;
+  font-family: 'Press Start 2P', monospace;
+  box-shadow: 0 0 0 3px black;
+  transition: transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  background-color: #cbd5e1;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border: none;
+.pixel-card:hover {
+  transform: scale(1.05);
+  animation: pixel-blink 0.15s steps(2) infinite alternate;
 }
 
-.dot.active {
-  background-color: #4f46e5;
+.pixel-card.pixel-card-active {
+  transform: rotate(-2deg);
 }
+
+.pixel-card-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  image-rendering: pixelated;
+  margin-bottom: 0.5rem;
+}
+
+.pixel-card-hover {
+  text-align: center;
+  font-size: 0.5rem;
+  color: white;
+}
+
+.pixel-click-hint {
+  display: block;
+  font-size: 0.45rem;
+  opacity: 0.6;
+  margin-top: 0.25rem;
+}
+
+@keyframes pixel-blink {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.5) contrast(2);
+  }
+}
+
+.pixel-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+
+.pixel-dialog {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 650px;
+  padding: 1.5rem;
+  background: #fafafa;
+  border-radius: 0.5rem;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.pixel-dialog-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 1rem 0;
+  image-rendering: pixelated;
+}
+
+.pixel-dialog .title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.pixel-dialog p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.dialog-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.8rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
 
 /*Skills section*/
 .skills-section {

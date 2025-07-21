@@ -1,215 +1,140 @@
-import React, { useRef, useEffect, useState } from "react";
-import gsap from "gsap";
-import { Draggable } from "gsap/Draggable";
-import projectsData from "../../data/projects.json";
-import type { Project } from "../../types/Project";
-import {
-  loading,
-  projectEiich,
-  projectEiichEmpresas,
-  projectNerd,
-  projectZeytol,
-  icoGithub,
-  icoWeb,
-} from "../../assets";
+import { useEffect, useRef, useState, useMemo, useCallback } from 'react'
+import type { FC } from 'react'
+import { gsap } from 'gsap'
+import projects from '../../data/projects.json'
+import * as assets from '../../assets'
+import type { Project } from '../../types/Project'
+import { ProjectModal } from './ProjectModal'
 
-gsap.registerPlugin(Draggable);
 
-const imageMap: Record<string, string> = {
-  loading: loading.src || "",
-  projectEiich: projectEiich.src || "",
-  projectEiichEmpresas: projectEiichEmpresas.src || "",
-  projectNerd: projectNerd.src || "",
-  projectZeytol: projectZeytol.src
-};
+const getAssetImage = (key: string): string => {
+  try {
+    const asset = assets[key as keyof typeof assets]
+    
+    if (!asset) {
+      console.warn(`Asset '${key}' no encontrado, usando imagen por defecto`)
+      return String(assets.loading || '')
+    }
 
-const projects: Project[] = projectsData
-  .map((project) => ({
-    ...project,
-    imageUrl: project.imageUrl ? imageMap[project.imageUrl] || "" : "",
-  }))
-  .reverse();
+    let imageUrl: string = ''
+    
+    if (typeof asset === 'string') {
+      imageUrl = asset
+    } else if (typeof asset === 'object' && asset !== null) {
+      const assetObj = asset as any
+      imageUrl = assetObj.default || assetObj.src || assetObj.href || assetObj.url || String(asset)
+    } else {
+      imageUrl = String(asset)
+    }
+    
+    return imageUrl
+    
+  } catch (error) {
+    return String(assets.loading || '')
+  }
+}
 
-const CARD_WIDTH = 320;
-const CARD_GAP = 24;
-const TOTAL_CARD_WIDTH = CARD_WIDTH + CARD_GAP;
-const MAX_INDEX = projects.length - 1;
+export const PortfolioSlider: FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [activeProject, setActiveProject] = useState<Project | null>(null)
+  const [projectIndex, setProjectIndex] = useState<number>(0)
 
-export const PortfolioSlider: React.FC = () => {
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const draggableInstance = useRef<Draggable | null>(null);
-  const [current, setCurrent] = useState(0);
+  const randomTransforms = useMemo(() => {
+    return projects.map(() => ({
+      rotate: (Math.random() * 6 - 3).toFixed(2),
+      x: (Math.random() * 10 - 5).toFixed(2),
+      y: (Math.random() * 10 - 5).toFixed(2),
+    }))
+  }, [])
 
-  const overlaysRef = useRef<(HTMLDivElement | null)[]>([]);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const projectsWithImages = useMemo(() => {
+    return projects.reverse().map(project => ({
+      ...project,
+      image: getAssetImage(project.imageUrl),
+    }))
+  }, [])
 
   useEffect(() => {
-    if (!sliderRef.current) return;
+    const cards = gsap.utils.toArray('.pixel-card')
+    if (cards.length > 0) {
+      gsap.from(cards, {
+        
+        y: 50,
+        stagger: 0.1,
+        duration: 0.4,
+        ease: 'power2.out',
+      })
+    }
+  }, [])
 
-    draggableInstance.current = Draggable.create(sliderRef.current, {
-      type: "x",
-      inertia: true,
-      bounds: {
-        minX: -TOTAL_CARD_WIDTH * MAX_INDEX,
-        maxX: 0,
-      },
-      edgeResistance: 0.85,
-      snap: {
-        x: (endValue: number) =>
-          Math.round(endValue / TOTAL_CARD_WIDTH) * TOTAL_CARD_WIDTH,
-      },
-      onSnapComplete() {
-        const idx = Math.round(-this.x / TOTAL_CARD_WIDTH);
-        setCurrent(Math.min(MAX_INDEX, Math.max(0, idx)));
-      },
-    })[0];
+  const handleCloseModal = useCallback(() => {
+    setActiveProject(null)
+  }, [])
 
-    return () => {
-      draggableInstance.current?.kill();
-    };
-  }, []);
+  const handleProjectClick = useCallback((project: Project) => {
+    setActiveProject(project)
+  }, [])
 
-  const onMouseEnter = (index: number) => {
-    const overlay = overlaysRef.current[index];
-    const cardImg = cardsRef.current[index]?.querySelector("img");
-    if (!overlay || !cardImg) return;
+  const positionedProjects = useMemo(() => {
+    return projectsWithImages.map((project, index) => {
+      const isActive = index === projectIndex
+      const transform = randomTransforms[index]
 
-    gsap.killTweensOf([overlay, cardImg]);
-
-    gsap.to(cardImg, {
-      scale: 1.03,
-      duration: 0.6,
-      ease: "cubic-bezier(0.4, 0, 0.2, 1)",
-    });
-
-    gsap.to(overlay, {
-      autoAlpha: 1,
-      y: 0,
-      duration: 0.6,
-      ease: "cubic-bezier(0.4, 0, 0.2, 1)",
-      pointerEvents: "auto",
-    });
-  };
-
-  const onMouseLeave = (index: number) => {
-    const overlay = overlaysRef.current[index];
-    const cardImg = cardsRef.current[index]?.querySelector("img");
-    if (!overlay || !cardImg) return;
-
-    gsap.killTweensOf([overlay, cardImg]);
-
-    gsap.to(cardImg, {
-      scale: 1,
-      duration: 0.5,
-      ease: "cubic-bezier(0.4, 0, 0.2, 1)",
-    });
-
-    gsap.to(overlay, {
-      autoAlpha: 0,
-      y: 20,
-      duration: 0.5,
-      ease: "cubic-bezier(0.4, 0, 0.2, 1)",
-      pointerEvents: "none",
-    });
-  };
-
-  const goToSlide = (index: number) => {
-    const clamped = Math.min(MAX_INDEX, Math.max(0, index));
-    setCurrent(clamped);
-    gsap.to(sliderRef.current, {
-      x: -clamped * TOTAL_CARD_WIDTH,
-      duration: 0.5,
-      ease: "cubic-bezier(0.4, 0, 0.2, 1)",
-      onComplete() {
-        draggableInstance.current?.update(true);
-      },
-    });
-  };
+      return {
+        ...project,
+        style: {
+          transform: `rotate(${transform.rotate}deg) translate(${transform.x}px, ${transform.y}px)`,
+          zIndex: isActive ? 10 : 1,
+          filter: isActive ? 'drop-shadow(0 0 10px white)' : 'none',
+          transition: 'all 0.3s ease-in-out',
+        },
+        className: `pixel-card${isActive ? ' pixel-card-active' : ''}`,
+      }
+    })
+  }, [projectsWithImages, projectIndex, randomTransforms])
 
   return (
-    <div className="slider-wrapper" aria-label="Slider de proyectos">
-      <div
-        className="slider-track"
-        ref={sliderRef}
-        tabIndex={0}
-        role="list"
-        aria-live="polite"
-      >
-        {projects.map(
-          ({ id, title, description, imageUrl, githubUrl, webUrl }, idx) => (
+    <>
+      <div className="pixel-gallery-wrapper">
+        <div className="pixel-gallery" ref={containerRef}>
+          {positionedProjects.map((project) => (
             <div
-              key={id}
-              className="slide-card nes-container is-rounded"
-              tabIndex={-1}
-              role="listitem"
-              aria-label={`${title}: ${description}`}
-              onMouseEnter={() => onMouseEnter(idx)}
-              onMouseLeave={() => onMouseLeave(idx)}
-              ref={(el) =>
-                void (cardsRef.current[idx] = el as HTMLDivElement | null)
-              }
+              className={project.className}
+              key={project.id}
+              onClick={() => handleProjectClick(project)}
+              style={project.style}
+              role="button"
+              tabIndex={0}
+              aria-label={`Proyecto ${project.title}`}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  handleProjectClick(project)
+                }
+              }}
             >
-              <img
-                className="slide-img"
-                src={imageUrl}
-                alt={title}
-                loading="lazy"
-              />
-              <div className="slide-content">
-                <h3 className="slide-title">{title}</h3>
-              </div>
-
               <div
-                className="slide-overlay"
-                ref={(el) => void (overlaysRef.current[idx] = el)}
-                aria-hidden="true"
+                className="pixel-card-image"
+                style={{ backgroundImage: `url(${project.image})` }}
               >
-                <p>{description}</p>
-                <div className="overlay-btns">
-                  {githubUrl && (
-                    <a
-                      href={githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="overlay-btn"
-                      aria-label={`Repositorio GitHub de ${title}`}
-                    >
-                      <img
-                        src={icoGithub.src}
-                        alt="GitHub"
-                        width="24"
-                        height="24"
-                      />
-                    </a>
-                  )}
-                  {webUrl && (
-                    <a
-                      href={webUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="overlay-btn"
-                      aria-label={`Sitio web de ${title}`}
-                    >
-                      <img src={icoWeb.src} alt="Web" width="24" height="24" />
-                    </a>
-                  )}
-                </div>
+                {!project.image && (
+                  <div className="pixel-card-loading">
+                    <span>...</span>
+                  </div>
+                )}
+              </div>
+              <div className="pixel-card-hover">
+                <span className="pixel-click-hint">¡Dont click!</span>
               </div>
             </div>
-          )
-        )}
-      </div>
+          ))}
+        </div>
 
-      <nav className="dots-container">
-        {projects.map((_, idx) => (
-          <button
-            key={idx}
-            className={`dot ${current === idx ? "active" : ""}`}
-            aria-label={`Ir al slide ${idx + 1}`}
-            onClick={() => goToSlide(idx)}
-          />
-        ))}
-      </nav>
-    </div>
-  );
-};
+
+      </div>
+      {activeProject && (
+          <ProjectModal project={activeProject} onClose={handleCloseModal} />
+      )}
+    </>
+  )
+}
