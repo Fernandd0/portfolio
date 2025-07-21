@@ -10,6 +10,8 @@ import projectEiich from "./img/project-eiich.webp";
 import projectEiichEmpresas from "./img/project-eiichEmpresas.webp";
 import projectNerd from "./img/project-nerd.webp";
 import projectZeytol from "./img/project-zeytol.webp";
+import projectBulle from "./img/project-bulle.webp";
+import projectPawner from "./img/project-pawner.webp";
 
 export {
   icoBurger,
@@ -23,5 +25,7 @@ export {
   projectEiich,
   projectEiichEmpresas,
   projectNerd,
-  projectZeytol
+  projectZeytol,
+  projectBulle,
+  projectPawner
 };

@@ -39,14 +39,14 @@
     "id": 6,
     "title": "Bulle Agency",
     "description": "Pagina web informativa de la agencia digital.",
-    "imageUrl": "projectNerd",
+    "imageUrl": "projectBulle",
     "webUrl": "https://bulle-agency.vercel.app/"
   },
   {
     "id": 7,
     "title": "Pawner",
     "description": "Landing page de la empresa de alimentos para mascotas.",
-    "imageUrl": "projectNerd",
+    "imageUrl": "projectPawner",
     "webUrl": "https://pawner.nerdstudiolab.com/"
   }
 ]
