@@ -204,10 +204,10 @@ nav ul.show {
 }
 .portada-titulo {
   color: var(--sixth-color);
-  font-family: var(--font-family-2);
+  font-family: var(--font-family-3);
   font-size: 1em;
   margin-bottom: 0.5em;
-  font-weight: 500;
+  font-weight: 400;
 }
 .portada-main {
   color: var(--secondary-color);
@@ -217,10 +217,24 @@ nav ul.show {
 }
 .portada-text {
   color: var(--sixth-color);
-  font-family: var(--font-family-2);
+  font-family: var(--font-family-3);
   font-size: var(--normal-font);
-  line-height: 1em;
+  line-height: 1.3em;
   margin-bottom: 1.5em;
+  font-weight: 400;
+}
+.portada-action {
+  color: var(--secondary-color);
+  font-weight: 450;
+  text-decoration: underline;
+}
+.portada-action:hover {
+  color: #e76e55;
+}
+.quote{
+  font-style: italic;
+  margin-top: 4em;
+  text-align: center;
   font-weight: 500;
 }
 .c-portada-img {
@@ -662,7 +676,7 @@ footer {
 @media screen and (width >= 480px) {
   .c-btn-portada {
     justify-content: center;
-    gap: 3em;
+    gap: 2em;
   }
 }
 /*Responsive <768*/
@@ -744,7 +758,7 @@ footer {
     font-size: 55px;
   }
   .div-portada-text {
-    max-width: 700px;
+    max-width: 650px;
   }
   .c-portada-img {
     width: 450px;
@@ -755,9 +769,6 @@ footer {
 @media screen and (width >= 1536px) {
   .portada-main {
     font-size: 60px;
-  }
-  .c-btn-portada {
-    gap: 5em;
   }
 }
 
