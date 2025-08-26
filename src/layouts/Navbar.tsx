@@ -31,17 +31,17 @@ export const Navbar = () => {
               </a>
             </li> */}
             <li>
-              <a href="#projects" className="nav-link">
+              <a href="/#projects" className="nav-link">
                 Proyectos
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="#skills" className="nav-link">
                 Habilidades
               </a>
-            </li>
+            </li> */}
             <li>
-              <a href="#contact" className="nav-link">
+              <a href="/#contact" className="nav-link">
                 Contacto
               </a>
             </li>

@@ -1,0 +1,10 @@
+---
+import ThanksSection from "../components/sections/ThanksSection.astro";
+import { Cat } from "../components/ui/cat";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <ThanksSection client:load/>
+    <Cat client:load />
+</Layout>

@@ -551,9 +551,10 @@ nav ul.show {
 }
 .contact-text {
   color: var(--sixth-color);
-  font-family: var(--font-family-2);
+  font-family: var(--font-family-3);
   font-size: var(--normal-font);
-  font-weight: 500;
+  font-weight: 400;
+  margin-bottom: 0;
 }
 .contact-title {
   color: var(--secondary-color);
@@ -807,4 +808,58 @@ footer {
   .c_container {
     max-width: 1340px;
   }
+}
+
+/* Thanks Section */
+.thanks-section{
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(2rem, 6vw, 6rem) 1rem;
+}
+.thank-content{
+  text-align: center;
+  display: grid;
+  place-items: center;
+  gap: 1.5rem;
+}
+.thanks-text{
+  margin: .25rem 0 .75rem;
+  line-height: 1.6;
+  opacity: .9;
+  font-size: 1.2rem;
+  font-family: var(--font-family-3);
+}
+.thanks-note{
+  opacity: .8;
+  font-style: italic;
+}
+.actions{
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.thanks-giant{
+  font-size: clamp(2.6rem, 9vw, 8.5rem);
+  line-height: .9;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 360px){
+  .thanks-giant{ font-size: 2.2rem; letter-spacing: -0.015em; }
+  .thanks-text{ font-size: .95rem; }
+}
+
+@media (min-width: 768px){
+  .thanks-giant{ font-size: clamp(4.5rem, 8vw, 7.5rem); }
+}
+
+@media (min-width: 1280px){
+  .thank-content{gap: 2.5rem;}
+  .thanks-giant{ font-size: 8.5rem; }
+  .thanks-text{ font-size: 1.15rem; }
+  .thanks-text{font-size: 1.6rem;}
 }
