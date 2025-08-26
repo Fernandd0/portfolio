@@ -1,4 +1,3 @@
-// ContactForm.tsx
 import React, { useState } from "react"
 
 const GAS_URL =
