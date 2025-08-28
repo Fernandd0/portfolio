@@ -7,7 +7,11 @@ type FormState = { name: string, email: string, message: string }
 const emailRegex = /\S+@\S+\.\S+/
 
 export const ContactForm: React.FC = () => {
-  const [form, setForm] = useState<FormState>({ name: "", email: "", message: "" })
+  const [form, setForm] = useState<FormState>({
+    name: "",
+    email: "",
+    message: "",
+  })
   const [sending, setSending] = useState(false)
   const [status, setStatus] = useState("")
 
