@@ -20,7 +20,7 @@ export const Navbar = () => {
           <div className="c-logo">
             <li>
               <a href="/" className="logo">
-                {"<efe/>"}
+                {"fernan-do"}
               </a>
             </li>
           </div>

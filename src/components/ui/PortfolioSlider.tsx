@@ -12,7 +12,6 @@ const getAssetImage = (key: string): string => {
     const asset = assets[key as keyof typeof assets]
     
     if (!asset) {
-      console.warn(`Asset '${key}' no encontrado, usando imagen por defecto`)
       return String(assets.loading || '')
     }
 
@@ -58,7 +57,6 @@ export const PortfolioSlider: FC = () => {
     const cards = gsap.utils.toArray('.pixel-card')
     if (cards.length > 0) {
       gsap.from(cards, {
-        
         y: 50,
         stagger: 0.1,
         duration: 0.4,
@@ -124,7 +122,7 @@ export const PortfolioSlider: FC = () => {
                 )}
               </div>
               <div className="pixel-card-hover">
-                <span className="pixel-click-hint">¡Dont click!</span>
+                <span className="pixel-click-hint">Más</span>
               </div>
             </div>
           ))}

@@ -29,11 +29,11 @@ import Analytics from "@vercel/analytics/astro";
     <!-- Open Graph (para Facebook, LinkedIn, etc.) -->
     <meta
       property="og:title"
-      content="Fernando Solorzano - Desarrollador de Software, Frontend"
+      content="Fernando Solorzano - Desarrollador de Software."
     />
     <meta
       property="og:description"
-      content="Explora el portafolio de Fernando Solorzano, desarrollador de software, frontend, creativo con enfoque moderno."
+      content="Explora el portafolio de Fernando Solorzano, desarrollador de software."
     />
     <meta
       property="og:image"
@@ -72,7 +72,7 @@ import Analytics from "@vercel/analytics/astro";
     <main>
       <slot />
     </main>
-    <SocialNetworks />
+    <SocialNetworks client:load/>
     <BtnScrollTop client:load />
     <Footer client:load />
   </body>

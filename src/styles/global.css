@@ -54,7 +54,7 @@ html body {
   position: sticky;
   top: 1em;
   left: 0;
-  z-index: 10;
+  z-index: 20;
   background-color: var(--primary-color);
 }
 
@@ -107,7 +107,6 @@ html body {
   padding: 1em 0;
   top: 86px;
   left: 10%;
-  width: 80%;
   text-align: center;
   transform: translateX(120%);
   transition: transform 0.5s ease-in;
@@ -417,6 +416,7 @@ nav ul.show {
 
 .pixel-click-hint {
   display: block;
+  cursor: pointer;
   font-size: 0.45rem;
   opacity: 0.6;
   margin-top: 0.25rem;
@@ -721,7 +721,6 @@ footer {
     background-color: var(--primary-color);
     padding: 0;
     margin: 0;
-    width: 100%;
     transform: translateX(0);
     border: none;
   }
@@ -812,7 +811,7 @@ footer {
 
 /* Thanks Section */
 .thanks-section{
-  min-height: 70vh;
+  min-height: 65vh;
   display: grid;
   place-items: center;
   padding: clamp(2rem, 6vw, 6rem) 1rem;

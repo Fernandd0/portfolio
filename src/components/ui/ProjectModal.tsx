@@ -33,7 +33,7 @@ export const ProjectModal: FC<Props> = ({ project, onClose }) => {
           {project.webUrl && (
             <p>
               <a
-                className="nes-btn is-primary"
+                className="nes-btn is-error"
                 href={project.webUrl}
                 target="_blank"
                 rel="noopener noreferrer"
