@@ -1,10 +1,26 @@
 ---
-import ThanksSection from "../components/sections/ThanksSection.astro";
-import { Cat } from "../components/widgets/cat/cat";
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro'
+import { Cat } from '../components/widgets/cat/cat'
 ---
 
 <Layout>
-  <ThanksSection />
+  <div class="p-div c_container">
+    <section class="thanks-section">
+      <div class="thank-content" id="thankWrap" aria-live="polite">
+        <i class="nes-icon coin is-large" aria-hidden="true"></i>
+
+        <h1 class="thanks-giant" aria-label="THANK YOU">THANKS</h1>
+
+        <p class="thanks-text">
+          Got your message. I’ll get back to you soon.<br />
+        </p>
+
+        <div class="actions">
+          <a href="/" class="nes-btn is-error">Back Home</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <Cat client:load />
 </Layout>
