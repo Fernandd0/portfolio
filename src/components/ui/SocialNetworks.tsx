@@ -21,18 +21,18 @@ export const SocialNetworks: FC = () => {
   }, [])
 
   return (
-    <div className='icon-list' ref={rootRef}>
-      <a href='https://www.linkedin.com/in/fernanddo-dev/' target='_blank' rel='noreferrer noopener'>
-        <i className='nes-icon is-medium-custom linkedin' />
+    <div className="icon-list" ref={rootRef}>
+      <a href="https://www.linkedin.com/in/fernan-do/" target="_blank" rel="noreferrer noopener">
+        <i className="nes-icon is-medium-custom linkedin" />
       </a>
-      <a href='https://github.com/Fernandd0' target='_blank' rel='noreferrer noopener'>
-        <i className='nes-icon is-medium-custom github' />
+      <a href="https://github.com/Fernandd0" target="_blank" rel="noreferrer noopener">
+        <i className="nes-icon is-medium-custom github" />
       </a>
-      <a href='https://twitter.com/Fernandddd0' target='_blank' rel='noreferrer noopener'>
-        <i className='nes-icon is-medium-custom twitter' />
+      <a href="https://twitter.com/Fernandddd0" target="_blank" rel="noreferrer noopener">
+        <i className="nes-icon is-medium-custom twitter" />
       </a>
-      <a href='mailto:fernando.sc.contacto@gmail.com' target='_blank' rel='noreferrer noopener'>
-        <i className='nes-icon is-medium-custom gmail' />
+      <a href="mailto:fernando.sc.contacto@gmail.com" target="_blank" rel="noreferrer noopener">
+        <i className="nes-icon is-medium-custom gmail" />
       </a>
     </div>
   )

@@ -1,95 +1,65 @@
+---
+import { hero4 } from '../../assets'
+---
+
 <div id="about" class="p-div c_container">
   <section class="about-me">
     <div class="about-c">
       <div class="c-bio-title">
-        <h2 class="bio-title">Sobre mi</h2>
+        <h2 class="bio-title">About Me</h2>
       </div>
     </div>
 
-    <section>
-      <button
-        type="button"
-        class="nes-btn is-warning"
-        onclick="document.getElementById('dialog-rounded').showModal();"
-      >
-        Sobre mi
-      </button>
-      <dialog class="nes-dialog is-rounded" id="dialog-rounded">
-        <form method="dialog">
-          <div class="bio">
-            <div class="c-bio-img">
-              <img
-                src="assets/img/me-1.png"
-                alt="me"
-                class="bio-img"
-                width="100"
-                height="100"
-              />
-            </div>
-            <div class="c-bio-text">
-              <p class="bio-text">
-                Soy desarrollador de software freelance, con una pasión por el
-                aprendizaje continuo y los desafíos tecnológicos.
-              </p>
-              <p class="bio-text">
-                Estoy disponible para ayudarte a llevar tus ideas al siguiente
-                nivel con soluciones tecnológicas innovadoras y efectivas.
-              </p>
-              <p class="bio-text">
-                <b>Si puedes imaginarlo, puedo programarlo.</b>
-              </p>
-            </div>
-          </div>
-          <!-- More About Me-->
-          <div class="c-hide-text">
-            <span class="-text">
-              <p>
-                Estoy aquí para convertir tus ideas en realidad,
-                <b
-                  >proporcionando servicios de desarrollo a medida que impulsan
-                  el crecimiento y la eficiencia de tu negocio</b
-                >. Ya sea que necesites una aplicación web, un sistema
-                personalizado o una consultoría tecnológica, puedo ayudarte a
-                alcanzar tus objetivos con profesionalismo y dedicación.
-              </p>
-              <p>
-                <a href="#contact"
-                  ><b>¡Hablemos y hagamos realidad tu proyecto!</b></a
-                >
-              </p>
-              <p>
-                En mi tiempo libre, disfruto practicar deportes como el
-                baloncesto y el fútbol. He notado que tanto en el deporte como
-                en la programación es esencial tener una planificación clara
-                antes de comenzar. En los deportes, esto significa establecer
-                una estrategia y un plan de juego, mientras que en la
-                programación implica definir los requisitos del proyecto y
-                establecer una arquitectura y diseño del software adecuados.
-              </p>
-              <ul class="nes-list is-circle hide-list">
-                <li class="hide-list-item">
-                  📝 Soy estudiante o tal vez lo fui, pero estoy constantemente
-                  aprendiendo y adaptándome a nuevas tecnologías para ofrecerte
-                  las soluciones más avanzadas y eficientes.
-                </li>
-                <li class="hide-list-item">
-                  📜 Escribo poemas para despejar mi mente y liberar mi
-                  creatividad, lo que me permite abordar los problemas desde
-                  perspectivas únicas.
-                </li>
-                <li class="hide-list-item">
-                  🌱 Actualmente, estoy profundizando mis conocimientos en
-                  machine learning, lo que abre nuevas posibilidades para
-                  proyectos con Inteligencia Artificial.
-                </li>
-              </ul>
-            </span>
-          </div>
-          <menu class="dialog-menu">
-            <button class="nes-btn">Cerrar</button>
-          </menu>
-        </form>
-      </dialog>
-    </section>
+    <div class="bio">
+      <div class="c-bio-img">
+        <img
+          src={hero4.src}
+          alt="Portrait of Fernando Solorzano"
+          class="bio-img"
+          width="100"
+          height="100"
+        />
+      </div>
+      <div class="c-bio-text">
+        <p class="bio-text">
+          I’m a <b>software engineer</b> with more than <b>2 years of experience</b> building web apps
+          that actually work well and look good.
+        </p>
+        <p class="bio-text">
+          I enjoy learning new stuff, solving tricky problems, and turning random ideas into things
+          people can actually use.
+        </p>
+        <p class="bio-text">
+          <b>If you can imagine it, I can build it.</b>
+        </p>
+      </div>
+    </div>
+
+    <div class="hide-text">
+      <p>
+        I like creating useful, scalable tools from small web projects to automation or AI-based
+        experiments. Whether it’s something personal or part of a bigger product, I focus on keeping
+        things simple and clean.
+      </p>
+      <p>
+        <a href="/#contact"><b>Let’s build something cool together.</b></a>
+      </p>
+      <p>
+        Outside of coding, I play basketball. Both remind me that having a clear plan makes a huge
+        difference same logic applies to writing good code.
+      </p>
+      <ul class="nes-list is-circle hide-list">
+        <li class="hide-list-item">
+          Always learning new tech and trying out ideas to get better at what I do.
+        </li>
+        <li class="hide-list-item">
+          Sometimes I write poems helps me reset and think from a different angle.
+        </li>
+        <li class="hide-list-item">
+          Lately I’ve been exploring <b>machine learning</b> and AI projects just for fun (and a bit
+          of curiosity).
+        </li>
+      </ul>
+    </div>
   </section>
 </div>

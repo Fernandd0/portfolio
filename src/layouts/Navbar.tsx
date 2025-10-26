@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
-import { icoBurger } from "../assets";
+import { useState, useEffect } from 'react'
+import { icoBurger } from '../assets'
 
 export const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false)
 
   useEffect(() => {
     if (isDarkMode) {
-      document.body.classList.add("dark-mood");
+      document.body.classList.add('dark-mood')
     } else {
-      document.body.classList.remove("dark-mood");
+      document.body.classList.remove('dark-mood')
     }
-  }, [isDarkMode]);
+  }, [isDarkMode])
 
   return (
     <div className="c_container c-header">
@@ -20,29 +20,29 @@ export const Navbar = () => {
           <div className="c-logo">
             <li>
               <a href="/" className="logo">
-                {"fernan-do"}
+                {'fernan-do'}
               </a>
             </li>
           </div>
-          <ul className={`nav-list ${isMenuOpen ? "show" : ""}`}>
-            {/* <li>
-              <a href="#about" className="nav-link">
-                Sobre Mi
-              </a>
-            </li> */}
+          <ul className={`nav-list ${isMenuOpen ? 'show' : ''}`}>
             <li>
-              <a href="/#projects" className="nav-link">
-                Proyectos
+              <a href="/about" className="nav-link">
+                About
               </a>
             </li>
-            {/* <li>
-              <a href="#skills" className="nav-link">
-                Habilidades
+            <li>
+              <a href="/#projects" className="nav-link">
+                Projects
               </a>
-            </li> */}
+            </li>
+            <li>
+              <a href="/stack" className="nav-link">
+                Stack
+              </a>
+            </li>
             <li>
               <a href="/#contact" className="nav-link">
-                Contacto
+                Contact
               </a>
             </li>
             <li>
@@ -55,10 +55,7 @@ export const Navbar = () => {
               </a>
             </li>
           </ul>
-          <button
-            className="nav-toggle"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+          <button className="nav-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <img
               className="img-nav-toggle"
               src={icoBurger.src}
@@ -70,5 +67,5 @@ export const Navbar = () => {
         </nav>
       </header>
     </div>
-  );
-};
+  )
+}
