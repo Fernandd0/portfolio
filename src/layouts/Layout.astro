@@ -6,6 +6,7 @@ import { Footer } from './Footer'
 import { SocialNetworks } from '../components/ui/SocialNetworks'
 import { BtnScrollTop } from '../components/ui/BtnScrollTop'
 import Analytics from '@vercel/analytics/astro'
+import { Cat } from '../components/widgets/cat/cat'
 ---
 
 <!doctype html>
@@ -22,7 +23,7 @@ import Analytics from '@vercel/analytics/astro'
     />
     <meta
       name="keywords"
-      content="Fernando Solorzano, software engineer, full stack, frontend, backend, portfolio, Astro, React, Vue, Node.js, Next.js, JavaScript, TypeScript, Tailwind, web development"
+      content="Fernando Solorzano, software engineer, full stack, frontend, backend, portfolio, Astro, React, Vue, Node.js, Next.js, JavaScript, TypeScript, Tailwind, web development, Fernando Solorzano dev."
     />
     <meta name="author" content="Fernando Solorzano" />
     <meta name="robots" content="index, follow" />
@@ -77,5 +78,6 @@ import Analytics from '@vercel/analytics/astro'
     <SocialNetworks client:load />
     <BtnScrollTop client:load />
     <Footer client:load />
+    <Cat client:idle />
   </body>
 </html>
