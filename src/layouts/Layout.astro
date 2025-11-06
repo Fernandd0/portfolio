@@ -7,6 +7,7 @@ import { SocialNetworks } from '../components/ui/SocialNetworks'
 import { BtnScrollTop } from '../components/ui/BtnScrollTop'
 import Analytics from '@vercel/analytics/astro'
 import { Cat } from '../components/widgets/cat/cat'
+import OpenPanelTracker from '../components/widgets/OpenPanelTracker.astro'
 ---
 
 <!doctype html>
@@ -67,7 +68,6 @@ import { Cat } from '../components/widgets/cat/cat'
     />
 
     <Analytics />
-    <!-- <script src="https://analytics.jhoan.dev/api/script.js" data-site-id="2" defer></script> -->
   </head>
   <body>
     <div class="bg-original"></div>
@@ -79,5 +79,6 @@ import { Cat } from '../components/widgets/cat/cat'
     <BtnScrollTop client:load />
     <Footer client:load />
     <Cat client:idle />
+    <OpenPanelTracker />
   </body>
 </html>
