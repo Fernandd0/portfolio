@@ -1,0 +1,45 @@
+.skill-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-container img {
+  transition: all 0.3s ease-in-out;
+  backface-visibility: hidden;
+}
+
+.skill-container:hover img {
+  filter: blur(1px) brightness(0.7);
+  transform: scale(1.05);
+}
+.skill-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
+  pointer-events: none;
+  width: 100%;
+  text-align: center;
+}
+
+.skill-container:hover .skill-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.skill-tooltip p {
+  margin: 0;
+  color: #fff;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.6rem;
+  text-shadow: 2px 2px 0 #000;
+  background: transparent;
+  padding: 0;
+}

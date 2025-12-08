@@ -1,27 +1,10 @@
 import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { InertiaPlugin } from 'gsap/InertiaPlugin'
+import './SkillsGallery.css'
+import skillsData from '../../../data/stack.json'
 
 gsap.registerPlugin(InertiaPlugin)
-
-const images = [
-  'https://skillicons.dev/icons?i=nextjs',
-  'https://skillicons.dev/icons?i=ts',
-  'https://skillicons.dev/icons?i=js',
-  'https://skillicons.dev/icons?i=react',
-  'https://skillicons.dev/icons?i=vue',
-  'https://skillicons.dev/icons?i=astro',
-  'https://skillicons.dev/icons?i=html',
-  'https://skillicons.dev/icons?i=css',
-  'https://skillicons.dev/icons?i=tailwind',
-  'https://skillicons.dev/icons?i=nodejs',
-  'https://skillicons.dev/icons?i=laravel',
-  'https://skillicons.dev/icons?i=php',
-  'https://skillicons.dev/icons?i=java',
-  'https://skillicons.dev/icons?i=mysql',
-  'https://skillicons.dev/icons?i=postgres',
-  'https://skillicons.dev/icons?i=git'
-]
 
 export default function SkillsGallery() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -49,7 +32,7 @@ export default function SkillsGallery() {
       if (!img) return
 
       const handleEnter = () => {
-        const tl = gsap.timeline({ onComplete: () => tl.kill() })
+        const tl = gsap.timeline({ onComplete: () => { tl.kill() } })
         tl.timeScale(1.2)
         tl.to(img, {
           inertia: {
@@ -84,9 +67,15 @@ export default function SkillsGallery() {
   return (
     <div className="icon_skill_div" ref={containerRef}>
       <div className="medias">
-        {images.map((src, i) => (
-          <div key={i} className="media">
-            <img src={src} alt={`Skill ${i + 1}`} />
+        {skillsData.map((skill, i) => (
+          <div key={i} className="media skill-container">
+            <div className="skill-tooltip">
+              <p>{skill.name}</p>
+            </div>
+            <img 
+              src={`https://skillicons.dev/icons?i=${skill.id}`} 
+              alt={skill.name} 
+            />
           </div>
         ))}
       </div>
