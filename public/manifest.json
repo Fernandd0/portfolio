@@ -1,0 +1,19 @@
+{
+  "name": "Fernando Solorzano – Full Stack Software Engineer",
+  "short_name": "Fernando",
+  "description": "Software Engineer focused on building modern, performant web applications using Next.js, React, Astro, and Node.js.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

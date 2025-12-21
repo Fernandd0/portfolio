@@ -11,7 +11,7 @@ import OpenPanelTracker from '../components/widgets/OpenPanelTracker.astro'
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -57,8 +57,41 @@ import OpenPanelTracker from '../components/widgets/OpenPanelTracker.astro'
 
     <!-- Icons & Fonts -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="generator" content={Astro.generator} />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://fernan-do.dev/#fernando-solorzano",
+        "name": "Fernando Solorzano",
+        "url": "https://fernan-do.dev",
+        "image": "https://fernan-do.dev/_astro/me-hero-4.Dx7q97DV.webp",
+        "description": "Software Engineer focused on building modern, performant web applications using Next.js, React, Astro, and Node.js.",
+        "jobTitle": "Software Engineer",
+        "knowsAbout": [
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "Astro",
+          "Next.js",
+          "Vue.js",
+          "Node.js",
+          "Python",
+          "PostgreSQL",
+          "SQL",
+          "REST APIs",
+          "Web Performance Optimization",
+          "Technical SEO"
+        ],
+        "sameAs": [
+          "https://github.com/Fernandd0",
+          "https://www.linkedin.com/in/fernan-do/"
+          "https://twitter.com/Fernandddd0"
+        ]
+      }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
