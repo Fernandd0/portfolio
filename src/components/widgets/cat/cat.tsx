@@ -11,18 +11,16 @@ export const Cat = () => {
   const legsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
-    const handleFirstClick = () => {
-      setIsVisible(true);
-      document.removeEventListener("click", handleFirstClick);
-      document.removeEventListener("touchstart", handleFirstClick);
+    const handleClick = () => {
+      setIsVisible((prev) => !prev);
     };
 
-    document.addEventListener("click", handleFirstClick);
-    document.addEventListener("touchstart", handleFirstClick);
+    document.addEventListener("click", handleClick);
+    document.addEventListener("touchstart", handleClick);
 
     return () => {
-      document.removeEventListener("click", handleFirstClick);
-      document.removeEventListener("touchstart", handleFirstClick);
+      document.removeEventListener("click", handleClick);
+      document.removeEventListener("touchstart", handleClick);
     };
   }, []);
 
