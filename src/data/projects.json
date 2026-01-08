@@ -2,42 +2,42 @@
   {
     "id": 1,
     "title": "Eiich",
-    "description": "Plataforma web donde se realizan sorteos y suscripciones mensuales.",
+    "description": "A comprehensive web platform for hosting online raffles and managing monthly subscriptions.",
     "imageUrl": "projectEiich",
     "webUrl": "https://eiich.com"
   },
   {
     "id": 2,
     "title": "ZEYTOL",
-    "description": "Pagina web informativa de la empresa.",
+    "description": "Official corporate website focusing on technology solutions and company information.",
     "imageUrl": "projectZeytol",
     "webUrl": "https://zeytoltech.com/"
   },
   {
     "id": 3,
     "title": "Eiich Empresas",
-    "description": "Plataforma Web para prestar servicios por membresia.",
+    "description": "A B2B platform designed to streamline and manage service-based memberships.",
     "imageUrl": "projectEiichEmpresas",
     "webUrl": "https://eiichempresas.com"
   },
   {
     "id": 4,
     "title": "Nerd Agencia Digital",
-    "description": "Pagina web informativa de la empresa.",
+    "description": "Portfolio website for a digital agency, showcasing creative projects and services.",
     "imageUrl": "projectNerd",
     "webUrl": "https://nerd.pe/"
   },
   {
     "id": 5,
     "title": "Bulle Agency",
-    "description": "Pagina web informativa de la agencia digital.",
+    "description": "Informational website for a digital agency, highlighting their portfolio and expertise.",
     "imageUrl": "projectBulle",
     "webUrl": "https://bulle-agency.vercel.app/"
   },
   {
     "id": 6,
     "title": "BNFILMS",
-    "description": "Pagina web informativa de la empresa.",
+    "description": "Official website for a film production company, featuring their latest works and services.",
     "imageUrl": "loading",
     "githubUrl": "",
     "webUrl": "https://bnfilms.vercel.app/"
@@ -45,8 +45,15 @@
   {
     "id": 7,
     "title": "Pawner",
-    "description": "Landing page de la empresa de alimentos para mascotas.",
+    "description": "Landing page for a pet food brand, focusing on product showcase and nutritional benefits.",
     "imageUrl": "projectPawner",
     "webUrl": "https://www.pawner.com.pe/"
+  },
+  {
+    "id": 8,
+    "title": "Tobi Stats",
+    "description": "Analytics dashboard for Spotify (Apple/YouTube soon) with shareable stats and AI-generated vibe cards.",
+    "imageUrl": "projectTobiStats",
+    "webUrl": "https://tobi-stats.vercel.app"
   }
 ]

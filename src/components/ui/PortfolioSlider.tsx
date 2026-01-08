@@ -10,13 +10,13 @@ import { ProjectModal } from './ProjectModal'
 const getAssetImage = (key: string): string => {
   try {
     const asset = assets[key as keyof typeof assets]
-    
+
     if (!asset) {
       return String(assets.loading || '')
     }
 
     let imageUrl: string = ''
-    
+
     if (typeof asset === 'string') {
       imageUrl = asset
     } else if (typeof asset === 'object' && asset !== null) {
@@ -25,9 +25,9 @@ const getAssetImage = (key: string): string => {
     } else {
       imageUrl = String(asset)
     }
-    
+
     return imageUrl
-    
+
   } catch (error) {
     return String(assets.loading || '')
   }
@@ -103,7 +103,7 @@ export const PortfolioSlider: FC = () => {
               style={project.style}
               role="button"
               tabIndex={0}
-              aria-label={`Proyecto ${project.title}`}
+              aria-label={`Project ${project.title}`}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault()
@@ -122,7 +122,7 @@ export const PortfolioSlider: FC = () => {
                 )}
               </div>
               <div className="pixel-card-hover">
-                <span className="pixel-click-hint">Más</span>
+                <span className="pixel-click-hint">More</span>
               </div>
             </div>
           ))}
@@ -131,7 +131,7 @@ export const PortfolioSlider: FC = () => {
 
       </div>
       {activeProject && (
-          <ProjectModal project={activeProject} onClose={handleCloseModal} />
+        <ProjectModal project={activeProject} onClose={handleCloseModal} />
       )}
     </>
   )

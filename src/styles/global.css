@@ -730,8 +730,9 @@ footer {
 .c-footer-text {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1em;
   padding: 0;
   margin: 0;
@@ -740,8 +741,11 @@ footer {
 .c-footer-text p {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1em;
   font-size: 0.5em;
+  text-align: center;
 }
 
 .footer-link {
@@ -802,6 +806,12 @@ footer {
 
   .c-footer-text p {
     font-size: 0.7em;
+    justify-content: flex-start;
+  }
+
+  .c-footer-text {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .icon_skill_div .media img {

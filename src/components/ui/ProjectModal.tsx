@@ -38,7 +38,7 @@ export const ProjectModal: FC<Props> = ({ project, onClose }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Visitar sitio
+                Visit website
               </a>
             </p>
           )}
@@ -51,7 +51,7 @@ export const ProjectModal: FC<Props> = ({ project, onClose }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Ver código
+                View code
               </a>
             </p>
           )}
