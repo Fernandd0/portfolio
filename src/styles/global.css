@@ -412,9 +412,7 @@ nav ul.show {
   color: var(--secondary-color);
   font-size: var(--bold-font);
   background-color: var(--primary-color);
-  padding: 0 1em;
-  margin: -3em 0 0 0;
-  top: 0;
+  margin: 0em 1em 1em 1em;
 }
 
 .pixel-gallery {
@@ -549,6 +547,43 @@ nav ul.show {
   }
 }
 
+.pixel-dialog-desc {
+  font-family: var(--font-family-2); /* IBM Plex Mono */
+  font-size: 0.85rem !important;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.pixel-dialog-tech {
+  margin-bottom: 2rem;
+}
+
+.pixel-tech-title {
+  font-family: var(--font-family-1);
+  font-size: 0.8rem !important;
+  margin-bottom: 0.5rem;
+}
+
+.pixel-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pixel-dialog-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.display-flex {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 
 
 
@@ -639,10 +674,15 @@ nav ul.show {
   color: var(--secondary-color);
 }
 
+.form-control {
+  margin-bottom: 2em;
+}
+
 .form-control .input-field {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  margin: 0 0 2em 0;
+  margin-bottom: 0.5em;
+  width: 100%;
 }
 
 .form-control .input-field {

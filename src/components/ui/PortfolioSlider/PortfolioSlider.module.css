@@ -1,0 +1,181 @@
+.bentoGridWrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bentoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 1.5rem;
+    grid-auto-flow: dense;
+}
+
+
+.card {
+    position: relative;
+    background-color: #1a1a1a;
+    border: 4px solid #4a4a4a;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    border-radius: 0px;
+    box-shadow: 4px 4px 0 #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0 #000;
+    z-index: 10;
+}
+
+.cardWide {
+    grid-column: span 2;
+}
+
+.cardTall {
+    grid-row: span 2;
+}
+
+.cardBig {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.cardImageContainer {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+    transition: transform 0.5s ease;
+}
+
+.cardContent {
+    padding: 1rem;
+    background-color: #1a1a1a;
+    flex-shrink: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+    z-index: 2; /* Ensure on top of image if overlap */
+}
+
+.cardTitle {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    line-height: 1.4;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.cardDesc {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: #a0a0a0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.cardLinks {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: auto;
+}
+
+.cardLinkBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0;
+    background: none;
+    border: none;
+    color: #a0a0a0;
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+    z-index: 20;
+}
+
+.cardLinkBtn:hover {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    background: none;
+    border: none;
+    transform: none;
+    box-shadow: none;
+}
+
+.cardLinkIcon {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+.cardLoading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #555;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.5rem;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right,
+            rgba(255, 255, 255, 0.05) 0%,
+            transparent 40%);
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .cardWide,
+    .cardBig {
+        grid-column: span 1;
+    }
+
+    .cardTall,
+    .cardBig {
+        grid-row: span 1;
+    }
+
+    .bentoGrid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .cardContent {
+        min-height: auto;
+    }
+}

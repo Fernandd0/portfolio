@@ -28,33 +28,46 @@ export const ProjectModal: FC<Props> = ({ project, onClose }) => {
             className="pixel-dialog-image"
             loading="lazy"
           />
-          <p>{project.description}</p>
+          <p className="pixel-dialog-desc">{project.description}</p>
 
-          {project.webUrl && (
-            <p>
+          {project.technologies && project.technologies.length > 0 && (
+            <div className="pixel-dialog-tech">
+              <p className="pixel-tech-title">Technologies:</p>
+              <div className="pixel-tech-list">
+                {project.technologies.map((tech) => (
+                  <span key={tech} className="nes-badge">
+                    <span className="is-dark">{tech}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="pixel-dialog-actions">
+            {project.webUrl && (
               <a
-                className="nes-btn is-error"
+                className="nes-btn is-primary display-flex"
                 href={project.webUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <i className="nes-icon coin is-small"></i>
                 Visit website
               </a>
-            </p>
-          )}
+            )}
 
-          {project.githubUrl && (
-            <p>
+            {project.githubUrl && (
               <a
-                className="nes-btn is-normal"
+                className="nes-btn display-flex"
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <i className="nes-icon github is-small"></i>
                 View code
               </a>
-            </p>
-          )}
+            )}
+          </div>
 
           <menu className="dialog-menu">
             <button

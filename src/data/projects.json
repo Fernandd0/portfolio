@@ -54,6 +54,7 @@
     "title": "Tobi Stats",
     "description": "Analytics dashboard for Spotify (Apple/YouTube soon) with shareable stats and AI-generated vibe cards.",
     "imageUrl": "projectTobiStats",
+    "githubUrl": "https://github.com/Fernandd0/tobi-stats",
     "webUrl": "https://tobi-stats.vercel.app"
   }
 ]

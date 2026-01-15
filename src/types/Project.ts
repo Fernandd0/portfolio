@@ -6,4 +6,5 @@ export type Project = {
   image?: string
   webUrl?: string
   githubUrl?: string
+  technologies?: string[]
 }
