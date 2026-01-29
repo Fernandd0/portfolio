@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { icoBurger } from '../assets'
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -13,16 +12,25 @@ export const Navbar = () => {
     }
   }, [isDarkMode])
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
+
   return (
     <div className="c_container c-header">
       <header className="header">
         <nav id="nav" className="nav">
           <div className="c-logo">
-            <li>
-              <a href="/" className="logo">
-                {'fernan-do'}
-              </a>
-            </li>
+            <a href="/" className="logo">
+              {'fernan-do'}
+            </a>
           </div>
           <ul className={`nav-list ${isMenuOpen ? 'show' : ''}`}>
             <li>
@@ -49,20 +57,19 @@ export const Navbar = () => {
               <a
                 href="https://docs.google.com/document/d/1W8yyTu2Z8-ZHUiU6m-7NzH1rN95tDm3g8G44wfBKCyc/edit?usp=sharing"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="nav-link"
               >
                 CV
               </a>
             </li>
           </ul>
-          <button className="nav-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <img
-              className="img-nav-toggle"
-              src={icoBurger.src}
-              alt="nav-toggle"
-              width="40"
-              height="40"
-            />
+          <button
+            className="nav-toggle"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`pixel-hamburger ${isMenuOpen ? 'active' : ''}`}></span>
           </button>
         </nav>
       </header>

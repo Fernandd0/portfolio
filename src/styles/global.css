@@ -78,7 +78,7 @@ html body main {
 
 .nav {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   height: 2.6em;
   margin: 0;
@@ -99,10 +99,13 @@ html body main {
   text-decoration: none;
   font-size: var(--mini-font);
   text-transform: uppercase;
-  padding: 1em 1.5em;
+  padding: 0 1.5em;
   border-right: 0.2em solid var(--third-color);
   width: 100%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .logo:hover {
@@ -117,62 +120,122 @@ html body main {
   cursor: pointer;
 }
 
+
 .nav-list {
   display: flex;
   list-style-type: none;
   margin: 0;
   justify-content: right;
-
-  position: fixed;
-  background-color: var(--third-color);
-  flex-direction: column;
-  padding: 1em 0;
-  top: 86px;
-  left: 10%;
-  width: 80%;
-  text-align: center;
-  transform: translateX(120%);
-  transition: transform 0.5s ease-in;
-
-  border: 0.3em solid var(--third-color);
-  border-image-slice: 3;
-  border-image-width: 3;
-  border-image-source: var(--border-img-3);
-  border-image-outset: 3;
+  gap: 0;
+  height: 100%;
 }
 
-nav ul.show {
-  transform: translateY(0);
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    border: 10px solid var(--secondary-color);
+    gap: 2rem;
+    z-index: 900;
+  }
+
+  .nav-list.show {
+    display: flex;
+    animation: menu-reveal 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    min-width: 200px;
+    max-width: 300px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 4px solid var(--secondary-color);
+    box-shadow: 4px 4px 0 var(--secondary-color);
+    font-family: var(--font-family-1); /* Press Start 2P */
+    font-size: 1rem;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    transition: transform 0.1s ease;
+  }
+
+  .nav-link:hover, .nav-link:active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--secondary-color);
+  }
 }
 
-.nav-link {
-  text-decoration: none;
-  font-size: var(--mini-font);
-  text-transform: uppercase;
-  padding: 1em 1.5em;
-  width: max-content;
-  cursor: pointer;
-  color: var(--fourth-color);
-  border: none;
-  padding: 0;
+@keyframes menu-reveal {
+  from {
+    opacity: 0;
+    clip-path: circle(0% at top right);
+  }
+  to {
+    opacity: 1;
+    clip-path: circle(150% at top right);
+  }
 }
 
-.nav-link:hover {
-  text-decoration: none;
-  color: var(--fourth-color);
-  background-color: var(--third-color);
-  transition: 0.3s ease;
+
+@media (min-width: 769px) {
+  .nav-list li {
+    height: 100%;
+    display: flex;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    font-size: var(--mini-font);
+    text-transform: uppercase;
+    padding: 0 1.5em;
+    width: max-content;
+    cursor: pointer;
+    color: var(--secondary-color);
+    border: none;
+    border-left: 0.2em solid var(--third-color);
+    background: transparent;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-link:hover {
+    text-decoration: none;
+    color: var(--fourth-color);
+    background-color: var(--third-color);
+    transition: 0.3s ease;
+  }
 }
 
 .nav-toggle {
-  display: block;
-  color: var(--secondary-color);
-  background: none;
-  border: none;
-  padding: 0 20px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  outline: none;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    color: var(--secondary-color);
+    background: none;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+  }
 }
 
 .nav-toggle:focus {
@@ -198,9 +261,50 @@ nav ul.show {
   --color-img-2: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(3%) hue-rotate(256deg) brightness(101%) contrast(102%);
 }
 
-.img-nav-toggle {
-  cursor: pointer;
-  filter: var(--color-img-2);
+/* Retro Pixel Hamburger */
+.pixel-hamburger,
+.pixel-hamburger::before,
+.pixel-hamburger::after {
+  display: block;
+  background-color: var(--secondary-color);
+  width: 30px;
+  height: 4px;
+  position: relative;
+  transition: transform 0.1s steps(2), opacity 0s;
+  box-shadow: 2px 2px 0 var(--primary-color);
+}
+
+.pixel-hamburger::before,
+.pixel-hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.pixel-hamburger::before {
+  top: -10px;
+}
+
+.pixel-hamburger::after {
+  top: 10px;
+}
+
+/* Active State (X) */
+.pixel-hamburger.active {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.pixel-hamburger.active::before {
+  top: 0;
+  transform: rotate(45deg);
+  box-shadow: none;
+}
+
+.pixel-hamburger.active::after {
+  top: 0;
+  transform: rotate(-45deg);
+  box-shadow: none;
 }
 
 /*Portada*/
@@ -964,7 +1068,7 @@ footer {
 
 @media (width >=768px) {
   .c_container {
-    max-width: 640px;
+    max-width: 750px;
   }
 }
 
