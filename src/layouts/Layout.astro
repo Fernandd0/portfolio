@@ -7,7 +7,6 @@ import { SocialNetworks } from '../components/ui/SocialNetworks'
 import { BtnScrollTop } from '../components/ui/BtnScrollTop'
 import Analytics from '@vercel/analytics/astro'
 import { Cat } from '../components/widgets/cat/cat'
-import OpenPanelTracker from '../components/widgets/OpenPanelTracker.astro'
 ---
 
 <!doctype html>
@@ -112,6 +111,5 @@ import OpenPanelTracker from '../components/widgets/OpenPanelTracker.astro'
     <BtnScrollTop client:load />
     <Footer client:load />
     <Cat client:idle />
-    <OpenPanelTracker />
   </body>
 </html>
