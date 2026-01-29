@@ -13,7 +13,7 @@ export const SocialNetworks: FC = () => {
       <a href="https://twitter.com/Fernandddd0" target="_blank" rel="noreferrer noopener">
         <i className="nes-icon is-medium-custom twitter" />
       </a>
-      <a href="mailto:fernando.sc.contacto@gmail.com" target="_blank" rel="noreferrer noopener">
+      <a href="mailto:hi.fernanddo@gmail.com" target="_blank" rel="noreferrer noopener">
         <i className="nes-icon is-medium-custom gmail" />
       </a>
     </div>

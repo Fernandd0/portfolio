@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { PortfolioSlider } from '../components/ui/PortfolioSlider/PortfolioSlider'
+---
+
+<Layout>
+  <div id="projects" class="p-div c_container">
+    <section class="projects">
+      <div class="c-projects-title">
+        <h2 class="projects-title-page">MY PROJECTS</h2>
+      </div>
+      <div class="parent-container">
+        <PortfolioSlider client:only />
+      </div>
+    </section>
+  </div>
+</Layout>

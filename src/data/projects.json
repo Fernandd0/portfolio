@@ -21,26 +21,19 @@
     "webUrl": "https://eiichempresas.com"
   },
   {
-    "id": 4,
-    "title": "Nerd Agencia Digital",
-    "description": "Portfolio website for a digital agency, showcasing creative projects and services.",
-    "imageUrl": "projectNerd",
-    "webUrl": "https://nerd.pe/"
-  },
-  {
     "id": 5,
-    "title": "Bulle Agency",
-    "description": "Informational website for a digital agency, highlighting their portfolio and expertise.",
-    "imageUrl": "projectBulle",
-    "webUrl": "https://bulle-agency.vercel.app/"
-  },
-  {
-    "id": 6,
     "title": "BNFILMS",
     "description": "Official website for a film production company, featuring their latest works and services.",
     "imageUrl": "loading",
     "githubUrl": "",
     "webUrl": "https://bnfilms.vercel.app/"
+  },
+  {
+    "id": 6,
+    "title": "Nerd Agencia Digital",
+    "description": "Portfolio website for a digital agency, showcasing creative projects and services.",
+    "imageUrl": "projectNerd",
+    "webUrl": "https://nerd.pe/"
   },
   {
     "id": 7,

@@ -415,6 +415,15 @@ nav ul.show {
   margin: 0em 1em 1em 1em;
 }
 
+.projects-title-page {
+  color: var(--secondary-color);
+  font-size: var(--bold-font);
+  background-color: var(--primary-color);
+  padding: 0 1em;
+  margin: -3em 0 0 0;
+  top: 0;
+}
+
 .pixel-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
