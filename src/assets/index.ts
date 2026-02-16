@@ -13,6 +13,7 @@ import projectZeytol from "./img/project-zeytol.webp";
 import projectBulle from "./img/project-bulle.webp";
 import projectPawner from "./img/project-pawner.webp";
 import projectTobiStats from "./img/project-tobiStats.webp";
+import projectCLoom from "./img/project-cloom.webp";
 
 export {
   icoBurger,
@@ -30,4 +31,5 @@ export {
   projectBulle,
   projectPawner,
   projectTobiStats,
+  projectCLoom,
 };

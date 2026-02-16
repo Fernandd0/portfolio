@@ -49,5 +49,13 @@
     "imageUrl": "projectTobiStats",
     "githubUrl": "https://github.com/Fernandd0/tobi-stats",
     "webUrl": "https://tobi-stats.vercel.app"
+  },
+  {
+    "id": 9,
+    "title": "C-LOOM",
+    "description": "Visual task management that grows with urgency. ",
+    "imageUrl": "projectCLoom",
+    "githubUrl": "",
+    "webUrl": "https://c-loom.vercel.app/"
   }
 ]
