@@ -1,12 +1,14 @@
 ---
-import { hero4 } from '../../assets'
+import { hero, hero4 } from '../../assets'
 ---
 
 <div class="p-custom c_container">
   <div class="div-portada-all">
     <div class="div-portada-text">
       <p class="portada-titulo">Hello there! I'm Fernando Solorzano</p>
-      <h1 class="portada-main"><span class="sr-only">Fernando Solorzano, </span>SOFTWARE ENGINEER</h1>
+      <h1 class="portada-main">
+        <span class="sr-only">Fernando Solorzano, </span>SOFTWARE ENGINEER
+      </h1>
       <p class="portada-text">
         I design and build scalable applications with one clear principle: less complexity, more
         value. <a href="#projects" class="portada-action">Check out my work.</a>
@@ -20,7 +22,7 @@ import { hero4 } from '../../assets'
         >
       </div>
     </div>
-    <div class="c-portada-img">
+    <div class="c-portada-img" data-pixel-swap={hero.src}>
       <img
         src={hero4.src}
         id="portada_img"
@@ -29,6 +31,7 @@ import { hero4 } from '../../assets'
         width="100"
         height="100"
       />
+      <canvas class="portada-canvas" aria-hidden="true"></canvas>
     </div>
     <!-- <h3 class="portada-text quote">
       "No podemos resolver problemas pensando de la misma manera que cuando los creamos."
@@ -36,3 +39,120 @@ import { hero4 } from '../../assets'
     </h3>   -->
   </div>
 </div>
+
+<script>
+  // Minecraft-style swap: on hover the alt image is painted block by block in
+  // random order; on leave the blocks are erased in reverse to show the original.
+  const BLOCK = 12 // block size in CSS px
+  const DURATION = 600 // ms for a full swap
+
+  document.querySelectorAll<HTMLElement>('[data-pixel-swap]').forEach((wrap) => {
+    const canvas = wrap.querySelector('canvas')
+    const ctx = canvas?.getContext('2d')
+    if (!canvas || !ctx) return
+
+    const img = new Image()
+    img.src = wrap.dataset.pixelSwap!
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    let cols = 0
+    let rows = 0
+    let order: number[] = []
+    let shown = 0 // number of blocks currently painted
+    let target = 0
+    let last = 0
+    let raf = 0
+    // Where the pixel art sits in the box (CSS px), like object-fit: cover
+    let dx = 0,
+      dy = 0,
+      k = 1
+
+    function layout() {
+      const { width, height } = wrap.getBoundingClientRect()
+      const dpr = window.devicePixelRatio || 1
+      canvas!.width = Math.round(width * dpr)
+      canvas!.height = Math.round(height * dpr)
+      ctx!.setTransform(dpr, 0, 0, dpr, 0, 0)
+      ctx!.imageSmoothingEnabled = false
+
+      cols = Math.ceil(width / BLOCK)
+      rows = Math.ceil(height / BLOCK)
+      order = Array.from({ length: cols * rows }, (_, i) => i)
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[order[i], order[j]] = [order[j], order[i]]
+      }
+
+      if (img.naturalWidth) {
+        k = Math.max(width / img.naturalWidth, height / img.naturalHeight)
+        dx = (width - img.naturalWidth * k) / 2
+        dy = (height - img.naturalHeight * k) / 2
+      }
+
+      // Canvas resize wipes it: repaint whatever state we were in
+      shown = 0
+      if (target) {
+        target = order.length
+        draw(target)
+      }
+    }
+
+    function block(index: number, paint: boolean) {
+      const x = (index % cols) * BLOCK
+      const y = Math.floor(index / cols) * BLOCK
+      if (paint) {
+        // Clamp to the art so edge blocks don't sample outside it
+        const x0 = Math.max(x, dx)
+        const y0 = Math.max(y, dy)
+        const x1 = Math.min(x + BLOCK, dx + img.naturalWidth * k)
+        const y1 = Math.min(y + BLOCK, dy + img.naturalHeight * k)
+        if (x1 > x0 && y1 > y0) {
+          ctx!.drawImage(
+            img,
+            (x0 - dx) / k,
+            (y0 - dy) / k,
+            (x1 - x0) / k,
+            (y1 - y0) / k,
+            x0,
+            y0,
+            x1 - x0,
+            y1 - y0
+          )
+        }
+      } else {
+        ctx!.clearRect(x, y, BLOCK, BLOCK)
+      }
+    }
+
+    function draw(next: number) {
+      while (shown < next) block(order[shown++], true)
+      while (shown > next) block(order[--shown], false)
+    }
+
+    function tick(now: number) {
+      const perMs = order.length / DURATION
+      const step = Math.max(1, Math.round((now - last) * perMs))
+      last = now
+      draw(target > shown ? Math.min(target, shown + step) : Math.max(target, shown - step))
+      raf = shown === target ? 0 : requestAnimationFrame(tick)
+    }
+
+    function run(on: boolean) {
+      if (!img.naturalWidth) return
+      target = on ? order.length : 0
+      if (reduceMotion) return draw(target)
+      if (!raf) {
+        last = performance.now()
+        raf = requestAnimationFrame(tick)
+      }
+    }
+
+    img.addEventListener('load', layout)
+    new ResizeObserver(layout).observe(wrap)
+
+    wrap.addEventListener('pointerenter', (e) => e.pointerType === 'mouse' && run(true))
+    wrap.addEventListener('pointerleave', (e) => e.pointerType === 'mouse' && run(false))
+    // Touch devices have no hover: tap toggles instead
+    wrap.addEventListener('pointerup', (e) => e.pointerType !== 'mouse' && run(target === 0))
+  })
+</script>
