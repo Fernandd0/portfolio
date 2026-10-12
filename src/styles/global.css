@@ -169,7 +169,7 @@ html body main {
     transition: transform 0.1s ease;
   }
 
-  .nav-link:hover, .nav-link:active {
+  .nav-link:hover, .nav-link:active, .nav-link.active {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     transform: translate(2px, 2px);
@@ -211,7 +211,8 @@ html body main {
     align-items: center;
   }
 
-  .nav-link:hover {
+  .nav-link:hover,
+  .nav-link.active {
     text-decoration: none;
     color: var(--fourth-color);
     background-color: var(--third-color);
@@ -232,14 +233,15 @@ html body main {
     padding: 0 20px;
     cursor: pointer;
     transition: 0.3s ease;
-    outline: none;
     position: relative;
     z-index: 1000;
   }
 }
 
-.nav-toggle:focus {
-  outline: none;
+/* Keyboard focus: pixel outline, hidden for mouse/touch clicks */
+:where(a, button, input, textarea, [tabindex]):focus-visible {
+  outline: 3px dashed var(--secondary-color);
+  outline-offset: 3px;
 }
 
 /*Color mood*/
@@ -604,15 +606,8 @@ html body main {
   }
 }
 
-.pixel-dialog-backdrop {
-  position: fixed;
-  inset: 0;
+.pixel-dialog::backdrop {
   background: rgba(0, 0, 0, 0.8);
-  display: grid;
-  place-items: center;
-  z-index: 1000;
-  display: flex;
-  gap: 3em;
 }
 
 .dialog-description {
@@ -625,13 +620,18 @@ html body main {
 
 
 .pixel-dialog {
-  margin: 0 auto;
+  margin: auto;
   width: 95%;
   max-width: 650px;
-  padding: 1.5rem;
+  /* Padding lives on the inner wrapper so clicks on the dialog box itself = backdrop clicks */
+  padding: 0;
   background: #fafafa;
   border-radius: 0.5rem;
   animation: fadeIn 0.25s ease-out;
+}
+
+.pixel-dialog-inner {
+  padding: 1.5rem;
 }
 
 .pixel-dialog-image {

@@ -6,6 +6,8 @@ const GAS_URL =
 type FormState = { name: string; email: string; message: string }
 type FormErrors = { name?: string; email?: string; message?: string }
 
+const CONTACT_EMAIL = 'hi.fernanddo@gmail.com'
+
 const emailRegex = /\S+@\S+\.\S+/
 
 export const ContactForm: React.FC = () => {
@@ -32,9 +34,9 @@ export const ContactForm: React.FC = () => {
 
   const validate = (): FormErrors => {
     const newErrors: FormErrors = {}
-    if (!form.name.trim()) newErrors.name = 'Name is required'
-    if (!emailRegex.test(form.email)) newErrors.email = 'Valid email is required'
-    if (!form.message.trim()) newErrors.message = 'Please enter a message'
+    if (!form.name.trim()) newErrors.name = 'What should I call you?'
+    if (!emailRegex.test(form.email)) newErrors.email = "That email doesn't look right"
+    if (!form.message.trim()) newErrors.message = "Don't leave me hanging, say something!"
     return newErrors
   }
 
@@ -51,19 +53,21 @@ export const ContactForm: React.FC = () => {
 
     setSending(true)
     try {
-      await fetch(GAS_URL, {
+      // text/plain keeps this a "simple" CORS request (no preflight, which Apps Script
+      // doesn't answer) while still letting us read the status, unlike mode: 'no-cors'
+      const res = await fetch(GAS_URL, {
         method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify({
           name: form.name,
           email: form.email,
           mensaje: form.message
         })
       })
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
       window.location.assign('/thanks')
     } catch {
-      setGeneralError('Network error. Please try again.')
+      setGeneralError('error')
     } finally {
       setSending(false)
     }
@@ -78,7 +82,7 @@ export const ContactForm: React.FC = () => {
             type="text"
             id="name"
             name="sender-name"
-            placeholder="Your name"
+            placeholder="What's your name?"
             className={`input-field nes-input ${errors.name ? 'is-error' : ''}`}
             required
             autoComplete="name"
@@ -96,7 +100,7 @@ export const ContactForm: React.FC = () => {
             type="email"
             id="email"
             name="sender-email"
-            placeholder="Email or social link"
+            placeholder="you@email.com"
             className={`input-field nes-input ${errors.email ? 'is-error' : ''}`}
             required
             autoComplete="email"
@@ -116,7 +120,7 @@ export const ContactForm: React.FC = () => {
           id="message"
           cols={3}
           rows={4}
-          placeholder="Write your message here..."
+          placeholder="What's on your mind?"
           name="message"
           className={`input-field nes-textarea ${errors.message ? 'is-error' : ''}`}
           required
@@ -136,21 +140,25 @@ export const ContactForm: React.FC = () => {
           disabled={sending}
           aria-busy={sending}
         >
-          {sending ? 'Sending...' : 'Send Message'}
+          {sending ? 'Sending...' : 'Send it'}
         </button>
       </div>
 
-      {generalError && (
-        <div
-          id="form-status"
-          role="status"
-          aria-live="polite"
-          className="nes-text is-error"
-          style={{ marginTop: '.75rem', textAlign: 'center' }}
-        >
-          {generalError}
-        </div>
-      )}
+      {/* Always rendered so screen readers announce the error when it appears */}
+      <div
+        id="form-status"
+        role="status"
+        aria-live="polite"
+        className="nes-text is-error"
+        style={{ marginTop: '.75rem', textAlign: 'center' }}
+      >
+        {generalError && (
+          <>
+            Oops, that didn't go through. Try again or hit me up at{' '}
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+          </>
+        )}
+      </div>
     </form>
   )
 }

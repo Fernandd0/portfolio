@@ -53,7 +53,7 @@
   {
     "id": 9,
     "title": "C-LOOM",
-    "description": "Visual task management that grows with urgency. ",
+    "description": "Visual task management that grows with urgency.",
     "imageUrl": "projectCLoom",
     "githubUrl": "",
     "webUrl": "https://c-loom.vercel.app/"

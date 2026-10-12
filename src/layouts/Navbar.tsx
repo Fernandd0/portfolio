@@ -1,8 +1,26 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
-export const Navbar = () => {
+const RESUME_URL =
+  'https://docs.google.com/document/d/1W8yyTu2Z8-ZHUiU6m-7NzH1rN95tDm3g8G44wfBKCyc/edit?usp=sharing'
+
+const LINKS = [
+  { href: '/about', label: 'About' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/stack', label: 'Stack' },
+  { href: '/#contact', label: 'Contact' }
+]
+
+const normalize = (path: string) => path.replace(/\/+$/, '') || '/'
+
+interface Props {
+  currentPath?: string
+}
+
+export const Navbar = ({ currentPath = '/' }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const toggleRef = useRef<HTMLButtonElement>(null)
+  const path = normalize(currentPath)
 
   useEffect(() => {
     if (isDarkMode) {
@@ -13,61 +31,74 @@ export const Navbar = () => {
   }, [isDarkMode])
 
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
+    if (!isMenuOpen) return
+    document.body.style.overflow = 'hidden'
+
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false)
+        toggleRef.current?.focus()
+      }
     }
+    document.addEventListener('keydown', handleKey)
+
     return () => {
       document.body.style.overflow = 'unset'
+      document.removeEventListener('keydown', handleKey)
     }
   }, [isMenuOpen])
+
+  const closeMenu = () => setIsMenuOpen(false)
 
   return (
     <div className="c_container c-header">
       <header className="header">
-        <nav id="nav" className="nav">
+        <nav id="nav" className="nav" aria-label="Main">
           <div className="c-logo">
-            <a href="/" className="logo">
-              {'fernan-do'}
+            <a href="/" className="logo" aria-current={path === '/' ? 'page' : undefined}>
+              {'fernando'}
             </a>
           </div>
-          <ul className={`nav-list ${isMenuOpen ? 'show' : ''}`}>
-            <li>
-              <a href="/about" className="nav-link">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="/projects" className="nav-link">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="/stack" className="nav-link">
-                Stack
-              </a>
-            </li>
-            <li>
-              <a href="/#contact" className="nav-link">
-                Contact
-              </a>
-            </li>
+          <ul
+            id="nav-list"
+            className={`nav-list ${isMenuOpen ? 'show' : ''}`}
+            // Mobile menu is fullscreen: tapping the empty area around the links closes it
+            onClick={(e) => e.target === e.currentTarget && closeMenu()}
+          >
+            {LINKS.map(({ href, label }) => {
+              const isActive = normalize(href) === path
+              return (
+                <li key={href}>
+                  <a
+                    href={href}
+                    className={`nav-link ${isActive ? 'active' : ''}`}
+                    aria-current={isActive ? 'page' : undefined}
+                    onClick={closeMenu}
+                  >
+                    {label}
+                  </a>
+                </li>
+              )
+            })}
             <li>
               <a
-                href="https://docs.google.com/document/d/1W8yyTu2Z8-ZHUiU6m-7NzH1rN95tDm3g8G44wfBKCyc/edit?usp=sharing"
+                href={RESUME_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nav-link"
+                onClick={closeMenu}
               >
                 CV
               </a>
             </li>
           </ul>
           <button
+            ref={toggleRef}
             className="nav-toggle"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls="nav-list"
           >
             <span className={`pixel-hamburger ${isMenuOpen ? 'active' : ''}`}></span>
           </button>

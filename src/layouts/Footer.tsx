@@ -3,11 +3,16 @@ export const Footer = () => {
   return (
     <footer>
       <div className="c_container c-footer-text">
-        <p className="footer-text-1">&copy; {currentYear} — All rights reserved.</p>
+        <p className="footer-text-1">&copy; {currentYear} Fernando Solorzano</p>
         <p className="footer-text-2">
-          Built by{' '}
-          <a href="https://github.com/Fernandd0" target="_blank" className="footer-link">
-            Fernando Solorzano
+          Built from scratch,{' '}
+          <a
+            href="https://github.com/Fernandd0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            pixel by pixel
           </a>
         </p>
       </div>
