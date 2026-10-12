@@ -7,50 +7,115 @@ import { SocialNetworks } from '../components/ui/SocialNetworks'
 import { BtnScrollTop } from '../components/ui/BtnScrollTop'
 import Analytics from '@vercel/analytics/astro'
 import { Cat } from '../components/widgets/cat/cat'
+import { hero4 } from '../assets'
+
+interface Props {
+  title?: string
+  description?: string
+  noindex?: boolean
+}
+
+const {
+  title = 'Fernando Solorzano — Software Engineer & Full Stack Developer',
+  description = 'Portfolio of Fernando Solorzano (fernandojs), Software Engineer and Full Stack Developer. I build clean, scalable web apps with React, Next.js, Astro and Node.js.',
+  noindex = false,
+} = Astro.props
+
+const site = Astro.site ?? new URL('https://fernandojs.com')
+const canonical = new URL(Astro.url.pathname, site).href
+const ogImage = new URL('/preview.webp', site).href
+const personImage = new URL(hero4.src, site).href
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${site.origin}/#person`,
+      name: 'Fernando Solorzano',
+      alternateName: ['Fernando Solorzano Dev', 'fernandojs', 'fernan-do'],
+      url: `${site.origin}/`,
+      image: personImage,
+      description:
+        'Software Engineer and Full Stack Developer focused on building modern, performant web applications using Next.js, React, Astro, and Node.js.',
+      jobTitle: 'Software Engineer',
+      knowsAbout: [
+        'JavaScript',
+        'TypeScript',
+        'React',
+        'Astro',
+        'Next.js',
+        'Vue.js',
+        'Node.js',
+        'Python',
+        'PostgreSQL',
+        'SQL',
+        'REST APIs',
+        'Web Performance Optimization',
+        'Technical SEO',
+      ],
+      sameAs: [
+        'https://github.com/Fernandd0',
+        'https://www.linkedin.com/in/fernan-do/',
+        'https://twitter.com/Fernandddd0',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${site.origin}/#website`,
+      url: `${site.origin}/`,
+      name: 'Fernando Solorzano',
+      alternateName: ['Fernando Solorzano Dev', 'fernandojs'],
+      publisher: { '@id': `${site.origin}/#person` },
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'ProfilePage',
+      '@id': `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      isPartOf: { '@id': `${site.origin}/#website` },
+      mainEntity: { '@id': `${site.origin}/#person` },
+    },
+  ],
+}
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Fernando Solorzano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
 
     <!-- Basic SEO -->
-    <meta
-      name="description"
-      content="Portfolio of Fernando Solorzano — Software Engineer. I build clean, scalable web apps with a focus on performance, simplicity, and real value."
-    />
-    <meta
-      name="keywords"
-      content="Fernando Solorzano, software engineer, full stack, frontend, backend, portfolio, Astro, React, Vue, Node.js, Next.js, JavaScript, TypeScript, Tailwind, web development, Fernando Solorzano dev."
-    />
+    <meta name="description" content={description} />
     <meta name="author" content="Fernando Solorzano" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://fernan-do.dev/" />
-    <meta name="language" content="en" />
+    <meta
+      name="robots"
+      content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'}
+    />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="theme-color" content="#000000" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Fernando Solorzano — Software Engineer" />
-    <meta
-      property="og:description"
-      content="Clean, scalable web apps. Less complexity, more value. Explore my work and get in touch."
-    />
-    <meta property="og:image" content="https://fernan-do.dev/preview.webp" />
-    <meta property="og:url" content="https://fernan-do.dev/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Fernando Solorzano — Portfolio" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="Fernando Solorzano — Software Engineer" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="profile" />
+    <meta property="profile:first_name" content="Fernando" />
+    <meta property="profile:last_name" content="Solorzano" />
+    <meta property="og:site_name" content="Fernando Solorzano" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Fernando Solorzano — Software Engineer" />
-    <meta
-      name="twitter:description"
-      content="I build clean, scalable web apps focused on performance and real impact."
-    />
-    <meta name="twitter:image" content="https://fernan-do.dev/preview.webp" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:site" content="@Fernandddd0" />
     <meta name="twitter:creator" content="@Fernandddd0" />
 
@@ -59,38 +124,7 @@ import { Cat } from '../components/widgets/cat/cat'
     <link rel="manifest" href="/manifest.json" />
     <meta name="generator" content={Astro.generator} />
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": "https://fernan-do.dev/#fernando-solorzano",
-        "name": "Fernando Solorzano",
-        "url": "https://fernan-do.dev",
-        "image": "https://fernan-do.dev/_astro/me-hero-4.Dx7q97DV.webp",
-        "description": "Software Engineer focused on building modern, performant web applications using Next.js, React, Astro, and Node.js.",
-        "jobTitle": "Software Engineer",
-        "knowsAbout": [
-          "JavaScript",
-          "TypeScript",
-          "React",
-          "Astro",
-          "Next.js",
-          "Vue.js",
-          "Node.js",
-          "Python",
-          "PostgreSQL",
-          "SQL",
-          "REST APIs",
-          "Web Performance Optimization",
-          "Technical SEO"
-        ],
-        "sameAs": [
-          "https://github.com/Fernandd0",
-          "https://www.linkedin.com/in/fernan-do/",
-          "https://twitter.com/Fernandddd0"
-        ]
-      }
-    </script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

@@ -3,7 +3,13 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  integrations: [react(), sitemap()],
+  site: "https://fernandojs.com",
+  integrations: [
+    react(),
+    sitemap({
+      filter: (page) => !page.includes("/thanks"),
+    }),
+  ],
   vite: {
     optimizeDeps: {
       include: ["gsap"],
