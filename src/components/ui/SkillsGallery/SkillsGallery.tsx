@@ -31,13 +31,13 @@ export default function SkillsGallery() {
       const img = el.querySelector('img')
       if (!img) return
 
-      const handleEnter = () => {
+      const wobble = (vx: number, vy: number) => {
         const tl = gsap.timeline({ onComplete: () => { tl.kill() } })
         tl.timeScale(1.2)
         tl.to(img, {
           inertia: {
-            x: { velocity: delta.current.x * 70, end: 0 },
-            y: { velocity: delta.current.y * 70, end: 0 }
+            x: { velocity: vx, end: 0 },
+            y: { velocity: vy, end: 0 }
           }
         })
         tl.fromTo(
@@ -54,8 +54,20 @@ export default function SkillsGallery() {
         )
       }
 
+      const handleEnter = () => wobble(delta.current.x * 70, delta.current.y * 70)
+      // Touch has no hover or mouse delta: give the icon a random flick on tap
+      const handleTap = (e: PointerEvent) => {
+        if (e.pointerType === 'mouse') return
+        const flick = () => (Math.random() - 0.5) * 1500
+        wobble(flick(), flick())
+      }
+
       el.addEventListener('mouseenter', handleEnter)
-      cleanups.push(() => el.removeEventListener('mouseenter', handleEnter))
+      el.addEventListener('pointerdown', handleTap)
+      cleanups.push(() => {
+        el.removeEventListener('mouseenter', handleEnter)
+        el.removeEventListener('pointerdown', handleTap)
+      })
     })
 
     return () => {
@@ -72,9 +84,12 @@ export default function SkillsGallery() {
             <div className="skill-tooltip">
               <p>{skill.name}</p>
             </div>
-            <img 
-              src={`https://skillicons.dev/icons?i=${skill.id}`} 
-              alt={skill.name} 
+            <img
+              src={`/skills/${skill.id}.svg`}
+              alt={skill.name}
+              width={48}
+              height={48}
+              loading="lazy"
             />
           </div>
         ))}

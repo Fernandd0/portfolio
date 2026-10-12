@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-
-const RESUME_URL =
-  'https://docs.google.com/document/d/1W8yyTu2Z8-ZHUiU6m-7NzH1rN95tDm3g8G44wfBKCyc/edit?usp=sharing'
+import { RESUME_URL } from '../data/site'
 
 const LINKS = [
   { href: '/about', label: 'About' },
@@ -18,17 +16,8 @@ interface Props {
 
 export const Navbar = ({ currentPath = '/' }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useState(false)
   const toggleRef = useRef<HTMLButtonElement>(null)
   const path = normalize(currentPath)
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add('dark-mood')
-    } else {
-      document.body.classList.remove('dark-mood')
-    }
-  }, [isDarkMode])
 
   useEffect(() => {
     if (!isMenuOpen) return
@@ -88,7 +77,7 @@ export const Navbar = ({ currentPath = '/' }: Props) => {
                 className="nav-link"
                 onClick={closeMenu}
               >
-                CV
+                Resume
               </a>
             </li>
           </ul>
