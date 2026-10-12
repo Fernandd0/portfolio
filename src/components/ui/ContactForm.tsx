@@ -65,6 +65,9 @@ export const ContactForm: React.FC = () => {
         })
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      // The script answers 200 even when it fails, with { status: 'error' }
+      const data = await res.json()
+      if (data.status !== 'success') throw new Error(data.message)
       window.location.assign('/thanks')
     } catch {
       setGeneralError('error')
