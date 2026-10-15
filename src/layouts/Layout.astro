@@ -18,7 +18,7 @@ interface Props {
 const {
   title = 'Fernando Solorzano — Software Engineer & Full Stack Developer',
   description = 'Portfolio of Fernando Solorzano (fernandojs), Software Engineer and Full Stack Developer. I build clean, scalable web apps with React, Next.js, Astro and Node.js.',
-  noindex = false,
+  noindex = false
 } = Astro.props
 
 const site = Astro.site ?? new URL('https://fernandojs.com')
@@ -33,7 +33,7 @@ const jsonLd = {
       '@type': 'Person',
       '@id': `${site.origin}/#person`,
       name: 'Fernando Solorzano',
-      alternateName: ['Fernando Solorzano Dev', 'fernandojs', 'fernan-do'],
+      alternateName: ['Fernando Solorzano Dev', 'fernandojs', 'fernandoscript'],
       url: `${site.origin}/`,
       image: personImage,
       description:
@@ -52,13 +52,13 @@ const jsonLd = {
         'SQL',
         'REST APIs',
         'Web Performance Optimization',
-        'Technical SEO',
+        'Technical SEO'
       ],
       sameAs: [
         'https://github.com/Fernandd0',
-        'https://www.linkedin.com/in/fernan-do/',
-        'https://twitter.com/Fernandddd0',
-      ],
+        'https://www.linkedin.com/in/fernandoscript',
+        'https://x.com/fernando_script'
+      ]
     },
     {
       '@type': 'WebSite',
@@ -67,7 +67,7 @@ const jsonLd = {
       name: 'Fernando Solorzano',
       alternateName: ['Fernando Solorzano Dev', 'fernandojs'],
       publisher: { '@id': `${site.origin}/#person` },
-      inLanguage: 'en',
+      inLanguage: 'en'
     },
     {
       '@type': 'ProfilePage',
@@ -75,9 +75,9 @@ const jsonLd = {
       url: canonical,
       name: title,
       isPartOf: { '@id': `${site.origin}/#website` },
-      mainEntity: { '@id': `${site.origin}/#person` },
-    },
-  ],
+      mainEntity: { '@id': `${site.origin}/#person` }
+    }
+  ]
 }
 ---
 
@@ -116,8 +116,8 @@ const jsonLd = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:site" content="@Fernandddd0" />
-    <meta name="twitter:creator" content="@Fernandddd0" />
+    <meta name="twitter:site" content="@fernando_script" />
+    <meta name="twitter:creator" content="@fernando_script" />
 
     <!-- Icons & Fonts -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
