@@ -5,7 +5,7 @@ export const Footer = () => {
       <div className="c_container c-footer-text">
         <p className="footer-text-1">&copy; {currentYear} Fernando Solorzano</p>
         <p className="footer-text-2">
-          Built from scratch,{' '}
+          Handcrafted{' '}
           <a
             href="https://github.com/Fernandd0"
             target="_blank"

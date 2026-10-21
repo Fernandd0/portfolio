@@ -66,6 +66,120 @@ html body main {
   border-image-repeat: stretch;
 }
 
+/* Pixel button: our own take on nes-btn. Color comes from the --btn-* vars,
+   so a new variant is just a class that sets them */
+.px-btn {
+  --btn-bg: var(--primary-color);
+  --btn-fg: var(--secondary-color);
+  --btn-hover: var(--primary-color);
+  --btn-shade: #adafbc;
+  --btn-border: var(--secondary-color);
+  --btn-px: 4px;
+
+  display: inline-block;
+  padding: 0.75em 1.25em;
+  margin: var(--btn-px);
+  font-family: var(--font-family-1);
+  text-align: center;
+  text-decoration: none;
+  color: var(--btn-fg);
+  background-color: var(--btn-bg);
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  /* Inner shade on the bottom-right, outer border with notched corners */
+  box-shadow:
+    inset calc(var(--btn-px) * -1) calc(var(--btn-px) * -1) 0 var(--btn-shade),
+    0 calc(var(--btn-px) * -1) 0 var(--btn-border),
+    0 var(--btn-px) 0 var(--btn-border),
+    calc(var(--btn-px) * -1) 0 0 var(--btn-border),
+    var(--btn-px) 0 0 var(--btn-border);
+}
+
+.px-btn:hover {
+  color: var(--btn-fg);
+  text-decoration: none;
+  background-color: var(--btn-hover);
+  --btn-shade-w: calc(var(--btn-px) * 1.5);
+  box-shadow:
+    inset calc(var(--btn-shade-w) * -1) calc(var(--btn-shade-w) * -1) 0 var(--btn-shade),
+    0 calc(var(--btn-px) * -1) 0 var(--btn-border),
+    0 var(--btn-px) 0 var(--btn-border),
+    calc(var(--btn-px) * -1) 0 0 var(--btn-border),
+    var(--btn-px) 0 0 var(--btn-border);
+}
+
+/* Pressed: the shade jumps to the top-left */
+.px-btn:active,
+.px-btn[aria-pressed="true"],
+.px-btn[aria-current="page"] {
+  box-shadow:
+    inset var(--btn-px) var(--btn-px) 0 var(--btn-shade),
+    0 calc(var(--btn-px) * -1) 0 var(--btn-border),
+    0 var(--btn-px) 0 var(--btn-border),
+    calc(var(--btn-px) * -1) 0 0 var(--btn-border),
+    var(--btn-px) 0 0 var(--btn-border);
+}
+
+.px-btn:focus-visible {
+  outline: var(--btn-px) dashed var(--btn-border);
+  outline-offset: calc(var(--btn-px) * 2);
+}
+
+.px-btn.is-primary {
+  --btn-bg: #209cee;
+  --btn-fg: #fff;
+  --btn-hover: #108de0;
+  --btn-shade: #006bb3;
+}
+
+.px-btn.is-success {
+  --btn-bg: #92cc41;
+  --btn-fg: #fff;
+  --btn-hover: #76c442;
+  --btn-shade: #4aa52e;
+}
+
+.px-btn.is-warning {
+  --btn-bg: #f7d51d;
+  --btn-fg: #212529;
+  --btn-hover: #f2c409;
+  --btn-shade: #e59400;
+}
+
+.px-btn.is-error {
+  --btn-bg: #e76e55;
+  --btn-fg: #fff;
+  --btn-hover: #ce372b;
+  --btn-shade: #8c2022;
+}
+
+/* Swaps the theme colors: black on light mode, white on dark mode */
+.px-btn.is-invert {
+  --btn-bg: var(--secondary-color);
+  --btn-fg: var(--primary-color);
+  --btn-hover: var(--secondary-color);
+  --btn-shade: var(--sixth-color);
+}
+
+.px-btn.is-dark {
+  --btn-bg: #212529;
+  --btn-fg: #fff;
+  --btn-hover: #000;
+  --btn-shade: #000;
+  --btn-border: #fff;
+}
+
+.px-btn:disabled,
+.px-btn.is-disabled {
+  --btn-bg: #d3d3d3;
+  --btn-fg: #212529;
+  --btn-hover: #d3d3d3;
+  --btn-shade: #adafbc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 /*Navbar*/
 .c-header {
   font-family: var(--font-family-1);
@@ -153,27 +267,26 @@ html body main {
     animation: menu-reveal 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* Links render as .px-btn here, this only sizes them */
+  .nav-list li {
+    width: 100%;
+    max-width: 300px;
+  }
+
   .nav-link {
     display: block;
     width: 100%;
     min-width: 200px;
-    max-width: 300px;
     padding: 1.5rem;
-    text-align: center;
-    border: 4px solid var(--secondary-color);
-    box-shadow: 4px 4px 0 var(--secondary-color);
-    font-family: var(--font-family-1); /* Press Start 2P */
     font-size: 1rem;
-    color: var(--secondary-color);
-    background-color: var(--primary-color);
-    transition: transform 0.1s ease;
   }
 
-  .nav-link:hover, .nav-link:active, .nav-link.active {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 var(--secondary-color);
+  /* Goes black on hover, like the old menu */
+  .nav-link:not(.is-error):hover {
+    --btn-bg: var(--secondary-color);
+    --btn-fg: var(--primary-color);
+    --btn-hover: var(--secondary-color);
+    --btn-shade: var(--sixth-color);
   }
 }
 
@@ -209,10 +322,15 @@ html body main {
     height: 100%;
     display: flex;
     align-items: center;
+    /* Undo the .px-btn look the mobile menu uses */
+    margin: 0;
+    box-shadow: none;
   }
 
   .nav-link:hover,
+  .nav-link:active,
   .nav-link.active {
+    box-shadow: none;
     text-decoration: none;
     color: var(--fourth-color);
     background-color: var(--third-color);

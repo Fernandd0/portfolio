@@ -144,11 +144,10 @@ export const Cat = () => {
     <>
       <button
         type="button"
-        className={styles.toggle}
+        className={`px-btn ${isVisible ? 'is-primary' : ''} ${styles.toggle}`}
         onClick={toggle}
         aria-pressed={isVisible}
         aria-label={isVisible ? 'Put the cat away' : 'Let the cat out'}
-        data-tooltip={isVisible ? 'Bye, kitty' : 'Psst… click me'}
       >
         <Paw />
       </button>

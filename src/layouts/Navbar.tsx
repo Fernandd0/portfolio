@@ -60,7 +60,7 @@ export const Navbar = ({ currentPath = '/' }: Props) => {
                 <li key={href}>
                   <a
                     href={href}
-                    className={`nav-link ${isActive ? 'active' : ''}`}
+                    className={`nav-link px-btn ${isActive ? 'active is-invert' : ''}`}
                     aria-current={isActive ? 'page' : undefined}
                     onClick={closeMenu}
                   >
@@ -74,7 +74,7 @@ export const Navbar = ({ currentPath = '/' }: Props) => {
                 href={RESUME_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="nav-link"
+                className="nav-link px-btn is-error"
                 onClick={closeMenu}
               >
                 Resume
